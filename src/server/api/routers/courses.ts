@@ -1,6 +1,10 @@
 import { z } from "zod";
 
-import { createTRPCRouter, protectedProcedure } from "~/server/api/trpc";
+import {
+  createTRPCRouter,
+  protectedProcedure,
+  publicProcedure,
+} from "~/server/api/trpc";
 
 export const coursesRouter = createTRPCRouter({
   getCourseList: protectedProcedure.query(async ({ ctx }) => {
@@ -27,19 +31,52 @@ export const coursesRouter = createTRPCRouter({
         courseId: z.string(),
       })
     )
-    .query(async ({ ctx }) => {
-      const data = await ctx.prisma.courseChapter.findMany({
-        select: {
-          id: true,
-          title: true,
-          videos: {
-            select: {
-              id: true,
-              title: true,
+    .query(async ({ ctx, input }) => {
+      try {
+        const data = await ctx.prisma.course.findFirstOrThrow({
+          where: {
+            id: input.courseId,
+          },
+          select: {
+            id: true,
+            name: true,
+            chapters: {
+              select: {
+                id: true,
+                title: true,
+                _count: {
+                  select: {
+                    videos: true,
+                  },
+                },
+              },
             },
           },
+        });
+        return {
+          id: data.id,
+          name: data.name,
+          chapters: data.chapters.map((chapter) => ({
+            id: chapter.id,
+            title: chapter.title,
+            videoCount: chapter._count.videos,
+          })),
+        };
+      } catch (e) {
+        return null;
+      }
+    }),
+  getCourseName: publicProcedure
+    .input(z.object({ id: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const courseName = await ctx.prisma.course.findFirst({
+        where: {
+          id: input.id,
+        },
+        select: {
+          name: true,
         },
       });
-      return data;
+      return courseName?.name ?? null;
     }),
 });

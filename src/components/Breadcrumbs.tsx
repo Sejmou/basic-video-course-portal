@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { NextRouter, useRouter } from "next/router";
+import { api } from "~/utils/api";
 
 const Breadcrumbs = () => {
   const router = useRouter();
-  const crumbs = generateBreadcrumbs(router);
+  const subpaths = getSubpaths(router);
+  console.log(subpaths);
+  const crumbs = useCrumbs(subpaths);
 
   return (
     <nav className="flex" aria-label="Breadcrumb">
@@ -79,7 +82,7 @@ const Breadcrumbs = () => {
 export default Breadcrumbs;
 
 // copied/adapted from https://dev.to/dan_starner/building-dynamic-breadcrumbs-in-nextjs-17oa
-function generateBreadcrumbs(router: NextRouter) {
+function getSubpaths(router: NextRouter) {
   // Remove any query parameters, as those aren't included in breadcrumbs
   const asPathWithoutQuery = router.asPath.split("?")[0]!;
 
@@ -89,18 +92,16 @@ function generateBreadcrumbs(router: NextRouter) {
     .split("/")
     .filter((v) => v.length > 0);
 
-  // Iterate over the list of nested route parts and build
-  // a "crumb" object for each one.
-  const crumbs = asPathNestedRoutes.map((subpath, idx) => {
-    // We can get the partial nested route for the crumb
-    // by joining together the path parts up to this point.
-    const href = "/" + asPathNestedRoutes.slice(0, idx + 1).join("/");
-    // The title will just be the route string for now
-    const title = subpath;
-    return { href, text: toTitleCase(title) };
-  });
+  const subpaths = asPathNestedRoutes
+    .map((subpath, idx) => {
+      // We can get the partial nested route
+      // by joining together the path parts up to this point.
+      const href = "/" + asPathNestedRoutes.slice(0, idx + 1).join("/");
+      return { href, subpath };
+    })
+    .slice(1, asPathNestedRoutes.length);
 
-  return crumbs.slice(1, crumbs.length); // remove the first crumb, which is the Dashboard Home page in our case
+  return subpaths;
 }
 
 function toTitleCase(str: string) {
@@ -108,4 +109,22 @@ function toTitleCase(str: string) {
     /\w\S*/g,
     (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
   );
+}
+
+function useCrumbs(subpaths: { href: string; subpath: string }[]) {
+  const courseName = api.courses.getCourseName.useQuery({
+    id: subpaths[0]?.subpath ?? "",
+  });
+
+  // const chapterName = api.courses.getChapterName.useQuery({id: subpaths[1]!.subpath, courseId: subpaths[0]!.subpath});
+
+  const crumbs = subpaths.map(({ href, subpath }, i) => {
+    if (i === 0) {
+      return { href, text: courseName.data ?? "Lade Kursname..." };
+    }
+    const text = toTitleCase(subpath);
+    return { href, text };
+  });
+
+  return crumbs;
 }
