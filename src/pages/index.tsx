@@ -47,7 +47,7 @@ const Login = () => {
           Learn <span className="text-[hsl(280,100%,70%)]">Dancing</span>
         </h1>
         <div className="flex flex-col items-center gap-2">
-          <Button onClick={() => void signIn()}>Sign In</Button>
+          <Button onClick={() => void signIn()}>Login</Button>
         </div>
       </div>
     </main>

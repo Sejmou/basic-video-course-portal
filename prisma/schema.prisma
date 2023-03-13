@@ -14,10 +14,31 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Example {
+model Course {
+    id        String          @id @default(cuid())
+    createdAt DateTime        @default(now())
+    updatedAt DateTime        @updatedAt
+    name      String
+    chapters  CourseChapter[]
+}
+
+model CourseChapter {
     id        String   @id @default(cuid())
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+    title     String
+    videos    Video[]
+    course    Course   @relation(fields: [courseId], references: [id])
+    courseId  String
+}
+
+model Video {
+    id        String        @id @default(cuid())
+    createdAt DateTime      @default(now())
+    updatedAt DateTime      @updatedAt
+    title     String
+    chapter   CourseChapter @relation(fields: [chapterId], references: [id])
+    chapterId String
 }
 
 // Necessary for Next auth
