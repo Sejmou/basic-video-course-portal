@@ -1,11 +1,5 @@
 import classNames from "classnames";
-import {
-  MouseEventHandler,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-} from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { OnProgressProps } from "react-player/base";
 import VimeoPlayer from "react-player/vimeo";
 import ReactPlayer from "react-player/vimeo";
@@ -33,12 +27,25 @@ const PlayerWrapper = ({ videoId }: Props) => {
     (state) => state.setPlayerDomElement
   );
   const fullscreen = usePlayerStore((state) => state.fullscreen);
+  const exitFullscreen = usePlayerStore((state) => state.exitFullscreen);
   useEffect(() => {
     if (containerRef.current) {
       setPlayerDomElement(containerRef.current);
     }
   }, [containerRef.current]);
-  console.log({ fullscreen });
+
+  useEffect(() => {
+    const onFullscreenChange = () => {
+      if (!document.fullscreenElement) {
+        exitFullscreen(); // need this workaround as user can exit fullscreen by pressing ESC (or maybe also in other ways) - we need to react to that as well and reset the player
+      }
+    };
+    document.addEventListener("fullscreenchange", onFullscreenChange);
+    return () => {
+      document.removeEventListener("fullscreenchange", onFullscreenChange);
+    };
+  }, [exitFullscreen]);
+
   return (
     <div
       className={classNames(
@@ -96,7 +103,6 @@ const Player = ({ url }: { url: string }) => {
       } else {
         wrapper.classList.remove("important-fullsize");
       }
-      console.log(wrapper);
     }
   }, [fullscreen, ref.current?.getInternalPlayer()]);
 

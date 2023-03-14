@@ -25,6 +25,7 @@ type State = {
   setPlayerDomElement: (playerDomElement: HTMLDivElement) => void;
   setCurrentTime: (seconds: number) => void;
   toggleFullscreen: () => void;
+  exitFullscreen: () => void;
 };
 
 const secondsToSkip = 6; // all videos have annoying 6 second intro animation - skip it when playing for first time
@@ -60,6 +61,14 @@ export const createPlayerStore = () => {
               if (domElement) screenfull.request(domElement as HTMLDivElement);
             }
             return { fullscreen: !state.fullscreen };
+          });
+        },
+        exitFullscreen: () => {
+          set((state) => {
+            if (state.fullscreen) {
+              screenfull.exit();
+            }
+            return { fullscreen: false };
           });
         },
       }))
