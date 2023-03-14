@@ -25,7 +25,7 @@ const Breadcrumbs = () => {
             >
               <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
             </svg>
-            Kurs-Übersicht
+            Kurse
           </Link>
         </li>
         {crumbs.map(({ href, text }, index) => (
@@ -115,12 +115,16 @@ function useCrumbs(subpaths: { href: string; subpath: string }[]) {
   const courseName = api.courses.getCourseName.useQuery({
     id: subpaths[0]?.subpath ?? "",
   });
-
-  // const chapterName = api.courses.getChapterName.useQuery({id: subpaths[1]!.subpath, courseId: subpaths[0]!.subpath});
+  const chapterName = api.courses.getChapterName.useQuery({
+    id: subpaths[1]?.subpath ?? "",
+  });
 
   const crumbs = subpaths.map(({ href, subpath }, i) => {
     if (i === 0) {
       return { href, text: courseName.data ?? "Lade Kursname..." };
+    }
+    if (i === 1) {
+      return { href, text: chapterName.data ?? "Lade Kapitelname..." };
     }
     const text = toTitleCase(subpath);
     return { href, text };

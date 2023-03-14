@@ -4,46 +4,40 @@ import Card from "~/components/Card";
 import { getLayout } from "~/components/UserAreaBaseLayout";
 import { api } from "~/utils/api";
 import { getServerSideProps as getServerSidePropsRedirect } from "~/utils/unauthorized-redirect";
-import { NextPageWithLayout } from "./_app";
+import { NextPageWithLayout } from "../../_app";
 
 const Dashboard: NextPageWithLayout = () => {
-  const courses = api.courses.getCourseList.useQuery();
   const router = useRouter();
+  const id = router.query.id as string;
+  const courses = api.courses.getCourseData.useQuery({ courseId: id });
+
+  const title = courses.data ? courses.data.name : "Lade Kursübersicht...";
+
+  const courseData = courses.data;
 
   return (
     <>
       <Head>
-        <title>Dashboard - Video Portal</title>
+        <title>{title}</title>
         <meta
           name="description"
           content="A basic example for a video course portal, created with Next.js"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <>
-        <div className="mb-4 text-center">
-          <h1 className="mb-2 text-4xl font-bold">
-            <span className="align-top text-3xl">💃</span>Willkommen!{" "}
-            <span className="align-top text-3xl">🕺</span>
-          </h1>
-          <p className="">
-            Folgende Kurse sind verfügbar. Sicher ist für dich auch etwas dabei
-            😉
-          </p>
-        </div>
-        {courses.isLoading ? (
-          <div>Lade Daten...</div>
-        ) : (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {courses.data?.map((course) => (
+      {!courses.isLoading && courseData && (
+        <div className="flex flex-col items-center justify-center gap-4">
+          <h1 className="text-4xl font-bold">{courseData.name}</h1>
+          <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {courseData.chapters.map((chapter) => (
               <Card
-                key={course.id}
+                key={chapter.id}
                 clickable
-                onClick={() => void router.push(`/courses/${course.id}`)}
+                onClick={() => void router.push(`/courses/${id}/${chapter.id}`)}
               >
                 <div className="flex h-full flex-col">
                   <div className="flex flex-1 flex-col">
-                    <h3 className="text-lg font-semibold">{course.name}</h3>
+                    <h3 className="text-lg font-semibold">{chapter.title}</h3>
                     {/* <p className="text-sm text-gray-500">
                           {course.description}
                         </p> */}
@@ -61,7 +55,7 @@ const Dashboard: NextPageWithLayout = () => {
                         </div> */}
                     <div className="flex flex-row items-center">
                       <p className="text-sm text-gray-500">
-                        {course.chapterCount} Kapitel
+                        {chapter.videoCount} Videos
                       </p>
                     </div>
                   </div>
@@ -69,15 +63,15 @@ const Dashboard: NextPageWithLayout = () => {
               </Card>
             ))}
           </div>
-        )}
-      </>
+        </div>
+      )}
     </>
   );
 };
 
+Dashboard.getLayout = getLayout;
+
 const getServerSideProps = getServerSidePropsRedirect;
 export { getServerSideProps };
-
-Dashboard.getLayout = getLayout;
 
 export default Dashboard;

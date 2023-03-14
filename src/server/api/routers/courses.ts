@@ -79,4 +79,45 @@ export const coursesRouter = createTRPCRouter({
       });
       return courseName?.name ?? null;
     }),
+  getChapterName: publicProcedure
+    .input(z.object({ id: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const courseName = await ctx.prisma.courseChapter.findFirst({
+        where: {
+          id: input.id,
+        },
+        select: {
+          title: true,
+        },
+      });
+      return courseName?.title ?? null;
+    }),
+  getChapterData: protectedProcedure
+    .input(
+      z.object({
+        chapterId: z.string(),
+      })
+    )
+    .query(async ({ ctx, input }) => {
+      try {
+        const data = await ctx.prisma.courseChapter.findFirstOrThrow({
+          where: {
+            id: input.chapterId,
+          },
+          select: {
+            id: true,
+            title: true,
+            videos: {
+              select: {
+                id: true,
+                title: true,
+              },
+            },
+          },
+        });
+        return data;
+      } catch (e) {
+        return null;
+      }
+    }),
 });

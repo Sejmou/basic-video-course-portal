@@ -44,6 +44,10 @@ async function main() {
     });
 
     for (const chapter of course.content) {
+      chapter.title = chapter.title.slice(
+        chapter.title.indexOf(" - ") + 3,
+        chapter.title.length
+      );
       const chapterRecord = await prisma.courseChapter.create({
         data: {
           title: chapter.title,
@@ -52,6 +56,13 @@ async function main() {
       });
 
       for (const videoData of chapter.videoData) {
+        const idxOfChapterName = videoData.title.indexOf(chapter.title);
+        if (idxOfChapterName !== -1) {
+          videoData.title = videoData.title.slice(
+            idxOfChapterName + chapter.title.length + 1,
+            videoData.title.length
+          );
+        }
         await prisma.video.create({
           data: {
             id: videoData.id,
