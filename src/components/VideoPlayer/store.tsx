@@ -16,9 +16,13 @@ type State = {
   playing: boolean;
   player?: VimeoPlayer;
   currentTime: number;
+  firstTimePlaying: boolean;
   togglePlayPause: () => void;
   setPlayer: (player: VimeoPlayer) => void;
+  setCurrentTime: (seconds: number) => void;
 };
+
+const secondsToSkip = 6; // all videos have annoying 6 second intro animation - skip it when playing for first time
 
 export const createPlayerStore = () => {
   console.log("creating new video player store");
@@ -29,13 +33,17 @@ export const createPlayerStore = () => {
     devtools(
       immer((set) => ({
         playing: false,
+        firstTimePlaying: true,
         currentTime: 0,
-        togglePlayPause: () => set((state) => ({ playing: !state.playing })),
-        setPlayer: (player) =>
+        togglePlayPause: () =>
           set((state) => {
-            // player.seekTo()
-            return { player };
+            if (state.firstTimePlaying) {
+              state.player?.seekTo(secondsToSkip, "seconds");
+            }
+            return { playing: !state.playing, firstTimePlaying: false };
           }),
+        setPlayer: (player) => set({ player }),
+        setCurrentTime: (seconds) => set({ currentTime: seconds }),
       }))
     )
   );

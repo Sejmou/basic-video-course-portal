@@ -1,4 +1,11 @@
-import { useEffect, useMemo, useRef } from "react";
+import {
+  MouseEventHandler,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+} from "react";
+import { OnProgressProps } from "react-player/base";
 import VimeoPlayer from "react-player/vimeo";
 import ReactPlayer from "react-player/vimeo";
 import IconButton from "../IconButton";
@@ -14,16 +21,28 @@ const VideoPlayer = ({ videoId }: Props) => {
   return (
     <PlayerContext.Provider value={store}>
       <div className="relative max-w-screen-lg justify-center">
-        <div className="absolute top-0 left-0 right-0 bottom-0 opacity-25 focus-within:opacity-100 hover:opacity-100">
-          <Timeline />
-          <Controls />
-        </div>
+        <ControlsContainer />
         <Player url={`${videoBaseUrl}${videoId}`} />
       </div>
     </PlayerContext.Provider>
   );
 };
 export default VideoPlayer;
+
+const ControlsContainer = () => {
+  const togglePlayPause = usePlayerStore((state) => state.togglePlayPause);
+
+  return (
+    <div
+      className="absolute top-0 left-0 right-0 bottom-0 select-none opacity-0 before:content-none focus-within:opacity-100 hover:opacity-100"
+      onClick={togglePlayPause}
+    >
+      <div className="absolute bottom-0 left-0 h-1/4 w-full bg-gradient-to-t from-black to-transparent opacity-50"></div>
+      <Timeline />
+      <Controls />
+    </div>
+  );
+};
 
 const Player = ({ url }: { url: string }) => {
   const ref = useRef<VimeoPlayer>(null);
@@ -34,25 +53,52 @@ const Player = ({ url }: { url: string }) => {
     }
   }, [ref, setPlayer]);
   const playing = usePlayerStore((state) => state.playing);
+  const setCurrentTime = usePlayerStore((state) => state.setCurrentTime);
+  const timeUpdateHandler = useCallback(
+    (ev: OnProgressProps) => {
+      setCurrentTime(ev.playedSeconds);
+    },
+    [setCurrentTime]
+  );
 
-  return <ReactPlayer playing={playing} ref={ref} url={url}></ReactPlayer>;
+  return (
+    <ReactPlayer
+      playing={playing}
+      ref={ref}
+      url={url}
+      onProgress={timeUpdateHandler}
+    ></ReactPlayer>
+  );
 };
 
 const Controls = () => {
   // TODO
   return (
     <div className="relative h-full w-full">
-      <PlayPauseButton className="absolute bottom-0 left-0" />
+      <PlayPauseButton light className="absolute bottom-0 left-0" />
     </div>
   );
 };
 
-const PlayPauseButton = ({ className }: { className?: string }) => {
+const PlayPauseButton = ({
+  className,
+  light,
+}: {
+  className?: string;
+  light?: boolean;
+}) => {
   const playing = usePlayerStore((state) => state.playing);
   const togglePlayPause = usePlayerStore((state) => state.togglePlayPause);
+  const clickHandler: MouseEventHandler = useCallback(
+    (ev) => {
+      togglePlayPause();
+      ev.stopPropagation();
+    },
+    [togglePlayPause]
+  );
 
   return (
-    <IconButton className={className} onClick={togglePlayPause}>
+    <IconButton light={light} className={className} onClick={clickHandler}>
       {playing ? <Pause /> : <Play />}
     </IconButton>
   );
