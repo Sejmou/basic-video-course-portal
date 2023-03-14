@@ -14,7 +14,8 @@ import VimeoPlayer from "react-player/vimeo";
 
 type State = {
   playing: boolean;
-  player?: VimeoPlayer; // not sure if we actually need this but it doesn't hurt I guess
+  player?: VimeoPlayer;
+  currentTime: number;
   togglePlayPause: () => void;
   setPlayer: (player: VimeoPlayer) => void;
 };
@@ -28,8 +29,13 @@ export const createPlayerStore = () => {
     devtools(
       immer((set) => ({
         playing: false,
+        currentTime: 0,
         togglePlayPause: () => set((state) => ({ playing: !state.playing })),
-        setPlayer: (player) => set({ player }),
+        setPlayer: (player) =>
+          set((state) => {
+            // player.seekTo()
+            return { player };
+          }),
       }))
     )
   );
