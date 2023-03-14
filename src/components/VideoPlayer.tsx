@@ -1,7 +1,9 @@
-const videoApiBaseURL = "http://localhost:4444/videos/";
+import ReactPlayer from "react-player/vimeo";
+
+const videoBaseUrl = "https://vimeo.com/";
 
 type Props = { videoId: string };
 const VideoPlayer = ({ videoId }: Props) => {
-  return <video src={`${videoApiBaseURL}${videoId}`} controls></video>;
+  return <ReactPlayer controls url={`${videoBaseUrl}${videoId}`}></ReactPlayer>;
 };
 export default VideoPlayer;
