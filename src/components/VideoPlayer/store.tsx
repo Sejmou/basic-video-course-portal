@@ -3,6 +3,7 @@ import { createContext, useContext } from "react";
 import { devtools } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import VimeoPlayer from "react-player/vimeo";
+import screenfull from "screenfull";
 
 // note: we want to use a separate store for every video player instance
 // so that we can have multiple video players with different configs on the same page
@@ -15,11 +16,15 @@ import VimeoPlayer from "react-player/vimeo";
 type State = {
   playing: boolean;
   player?: VimeoPlayer;
+  playerDomElement?: HTMLDivElement;
   currentTime: number;
   firstTimePlaying: boolean;
+  fullscreen: boolean;
   togglePlayPause: () => void;
   setPlayer: (player: VimeoPlayer) => void;
+  setPlayerDomElement: (playerDomElement: HTMLDivElement) => void;
   setCurrentTime: (seconds: number) => void;
+  toggleFullscreen: () => void;
 };
 
 const secondsToSkip = 6; // all videos have annoying 6 second intro animation - skip it when playing for first time
@@ -35,6 +40,7 @@ export const createPlayerStore = () => {
         playing: false,
         firstTimePlaying: true,
         currentTime: 0,
+        fullscreen: false,
         togglePlayPause: () =>
           set((state) => {
             if (state.firstTimePlaying) {
@@ -43,7 +49,19 @@ export const createPlayerStore = () => {
             return { playing: !state.playing, firstTimePlaying: false };
           }),
         setPlayer: (player) => set({ player }),
+        setPlayerDomElement: (playerDomElement) => set({ playerDomElement }),
         setCurrentTime: (seconds) => set({ currentTime: seconds }),
+        toggleFullscreen: () => {
+          set((state) => {
+            if (state.fullscreen) {
+              screenfull.exit();
+            } else {
+              const domElement = state.playerDomElement;
+              if (domElement) screenfull.request(domElement as HTMLDivElement);
+            }
+            return { fullscreen: !state.fullscreen };
+          });
+        },
       }))
     )
   );
