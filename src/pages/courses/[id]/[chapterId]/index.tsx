@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { getLayout } from "~/components/UserAreaBaseLayout";
+import VideoPlayer from "~/components/VideoPlayer";
 import { api } from "~/utils/api";
 import { getServerSideProps as getServerSidePropsRedirect } from "~/utils/unauthorized-redirect";
 import { NextPageWithLayout } from "../../../_app";
@@ -35,6 +36,7 @@ const Videos: NextPageWithLayout = () => {
           {videoData.videos.map((video) => (
             <div key={video.id}>
               <h3 className="text-lg font-semibold">{video.title}</h3>
+              <VideoPlayer videoId={video.id} />
             </div>
           ))}
         </div>

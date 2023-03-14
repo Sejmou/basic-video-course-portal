@@ -5,7 +5,6 @@ import { api } from "~/utils/api";
 const Breadcrumbs = () => {
   const router = useRouter();
   const subpaths = getSubpaths(router);
-  console.log(subpaths);
   const crumbs = useCrumbs(subpaths);
 
   return (

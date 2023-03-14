@@ -19,7 +19,7 @@ function Layout({ children }: Props) {
               Logout
             </Button>
           </div>
-          <div className="flex-1">{children}</div>
+          <div className="flex-1 overflow-auto">{children}</div>
         </Card>
       </main>
     </>
