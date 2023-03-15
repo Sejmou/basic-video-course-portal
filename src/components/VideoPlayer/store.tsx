@@ -4,7 +4,6 @@ import { devtools } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import VimeoPlayer from "react-player/vimeo";
 import screenfull from "screenfull";
-import { WritableDraft } from "immer/dist/types/types-external";
 
 // note: we want to use a separate store for every video player instance
 // so that we can have multiple video players with different configs on the same page
@@ -34,7 +33,8 @@ type State = {
 
   seekForward: (seconds: number) => void;
   seekBackward: (seconds: number) => void;
-  seekTo: (seconds: number) => void;
+  seekToSeconds: (seconds: number) => void;
+  seekToFraction: (fraction: number) => void;
 
   increasePlaybackRate: (amount: number) => void;
   decreasePlaybackRate: (amount: number) => void;
@@ -126,9 +126,14 @@ export const createPlayerStore = () => {
             );
           });
         },
-        seekTo: (seconds) => {
+        seekToSeconds: (seconds) => {
           set((state) => {
             state.player?.seekTo(seconds, "seconds");
+          });
+        },
+        seekToFraction: (fraction) => {
+          set((state) => {
+            state.player?.seekTo(clamp(fraction, 0, 1), "fraction");
           });
         },
         increasePlaybackRate: async (amount) => {
@@ -174,4 +179,8 @@ export const usePlayerStore = <T,>(selector: (state: State) => T) => {
 
 function getInternalPlayer(player: VimeoPlayer): VimeoInternalPlayer {
   return player.getInternalPlayer() as VimeoInternalPlayer;
+}
+
+function clamp(value: number, min: number, max: number) {
+  return Math.min(Math.max(value, min), max);
 }

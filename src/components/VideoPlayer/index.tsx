@@ -6,6 +6,7 @@ import ReactPlayer from "react-player/vimeo";
 import IconButton from "../IconButton";
 import { FullscreenEnter, FullscreenExit, Pause, Play, Replay } from "./icons";
 import { createPlayerStore, PlayerContext, usePlayerStore } from "./store";
+import { useProgressPercentage } from "./use-derived-state";
 import { useKeyboardControls } from "./use-keyboard-controls";
 
 const videoBaseUrl = "https://vimeo.com/";
@@ -193,5 +194,32 @@ const FullscreenButton = () => {
 };
 
 const Timeline = () => {
-  return <div></div>; // TODO
+  const progress = useProgressPercentage();
+  const seekTo = usePlayerStore((state) => state.seekToFraction);
+  const clickHandler = useCallback(
+    (ev: React.MouseEvent<HTMLDivElement>) => {
+      const rect = ev.currentTarget.getBoundingClientRect();
+      const x = ev.clientX - rect.left;
+      const fraction = x / rect.width;
+      seekTo(fraction);
+      ev.stopPropagation();
+    },
+    [seekTo]
+  );
+
+  return (
+    <div className="absolute bottom-9 left-0 z-10 flex h-2 w-full cursor-pointer items-center">
+      <div
+        className="relative mx-2 h-1 w-full bg-gray-500 hover:h-full"
+        onClick={clickHandler}
+      >
+        <div
+          className="absolute top-0 left-0 h-full bg-purple-500"
+          style={{
+            width: `${progress}%`,
+          }}
+        />
+      </div>
+    </div>
+  );
 };
