@@ -11,19 +11,22 @@ import { useKeyboardControls } from "./use-keyboard-controls";
 
 const videoBaseUrl = "https://vimeo.com/";
 
-type Props = { videoId: string };
-const VideoPlayer = ({ videoId }: Props) => {
+type Props = { videoId: string; title: string };
+const VideoPlayer = ({ videoId, title }: Props) => {
   const store = useMemo(() => createPlayerStore(), []); // store should not be recreated on every rerender of this component
 
   return (
     <PlayerContext.Provider value={store}>
-      <PlayerWrapper videoId={videoId} />
+      <div>
+        <h3 className="text-lg font-semibold">{title}</h3>
+        <PlayerWrapper videoId={videoId} />
+      </div>
     </PlayerContext.Provider>
   );
 };
 export default VideoPlayer;
 
-const PlayerWrapper = ({ videoId }: Props) => {
+const PlayerWrapper = ({ videoId }: { videoId: string }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const setPlayerDomElement = usePlayerStore(
     (state) => state.setPlayerDomElement

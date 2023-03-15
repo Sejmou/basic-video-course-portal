@@ -26,7 +26,7 @@ const Videos: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {!videos.isLoading && videoData && (
-        <div className="flex flex-col items-center justify-center gap-4">
+        <div className="flex flex-col items-center gap-4">
           <h1 className="text-4xl font-bold">{videoData.title}</h1>
           <p className="text-lg">
             {videoData.videos.length} Video
@@ -34,10 +34,11 @@ const Videos: NextPageWithLayout = () => {
               "s"}
           </p>
           {videoData.videos.map((video) => (
-            <div key={video.id}>
-              <h3 className="text-lg font-semibold">{video.title}</h3>
-              <VideoPlayer videoId={video.id} />
-            </div>
+            <VideoPlayer
+              key={video.id}
+              videoId={video.id}
+              title={video.title}
+            />
           ))}
         </div>
       )}
