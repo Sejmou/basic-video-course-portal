@@ -4,8 +4,9 @@ import { OnProgressProps } from "react-player/base";
 import VimeoPlayer from "react-player/vimeo";
 import ReactPlayer from "react-player/vimeo";
 import IconButton from "../IconButton";
-import { FullscreenEnter, FullscreenExit, Pause, Play } from "./icons";
+import { FullscreenEnter, FullscreenExit, Pause, Play, Replay } from "./icons";
 import { createPlayerStore, PlayerContext, usePlayerStore } from "./store";
+import { useKeyboardControls } from "./use-keyboard-controls";
 
 const videoBaseUrl = "https://vimeo.com/";
 
@@ -49,13 +50,14 @@ const PlayerWrapper = ({ videoId }: Props) => {
   return (
     <div
       className={classNames(
-        "justify-center",
+        "justify-center focus:outline-none",
         { "relative max-w-screen-lg": !fullscreen },
         {
           "absolute top-0 left-0 h-screen w-screen": fullscreen,
         }
       )}
       ref={containerRef}
+      tabIndex={-1} // required for keyboard controls hook to work
     >
       <ControlsContainer />
       <Player url={`${videoBaseUrl}${videoId}`} />
@@ -65,6 +67,7 @@ const PlayerWrapper = ({ videoId }: Props) => {
 
 const ControlsContainer = () => {
   const togglePlayPause = usePlayerStore((state) => state.togglePlayPause);
+  useKeyboardControls();
 
   return (
     <div
@@ -105,6 +108,7 @@ const Player = ({ url }: { url: string }) => {
       }
     }
   }, [fullscreen, ref.current?.getInternalPlayer()]);
+  const setDuration = usePlayerStore((state) => state.setDuration);
 
   return (
     <ReactPlayer
@@ -112,6 +116,8 @@ const Player = ({ url }: { url: string }) => {
       ref={ref}
       url={url}
       onProgress={timeUpdateHandler}
+      onDuration={setDuration}
+      onSeek={setCurrentTime}
     ></ReactPlayer>
   );
 };
@@ -125,6 +131,7 @@ const Controls = () => {
         onClick={(ev) => ev.stopPropagation()}
       >
         <PlayPauseButton />
+        <TimeDisplay />
         <div className="flex-1"></div>
         <FullscreenButton />
       </div>
@@ -132,13 +139,35 @@ const Controls = () => {
   );
 };
 
+const TimeDisplay = () => {
+  const currentTime = usePlayerStore((state) => state.currentTime);
+  const duration = usePlayerStore((state) => state.duration);
+
+  return (
+    <div className="flex items-center text-sm">
+      <span className="mr-1">{formatTime(currentTime)}</span>
+      <span className="mr-1">/</span>
+      <span className="mr-1">
+        {duration !== undefined ? formatTime(duration) : "--:--"}
+      </span>
+    </div>
+  );
+};
+
+function formatTime(seconds: number): string {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds - minutes * 60);
+  return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
+}
+
 const PlayPauseButton = ({ className }: { className?: string }) => {
   const playing = usePlayerStore((state) => state.playing);
   const togglePlayPause = usePlayerStore((state) => state.togglePlayPause);
+  const reachedEnd = usePlayerStore((state) => state.reachedEndOfPlayback);
 
   return (
     <IconButton className={className} onClick={togglePlayPause}>
-      {playing ? <Pause /> : <Play />}
+      {reachedEnd ? <Replay /> : playing ? <Pause /> : <Play />}
     </IconButton>
   );
 };

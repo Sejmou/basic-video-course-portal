@@ -18,17 +18,24 @@ type State = {
   player?: VimeoPlayer;
   playerDomElement?: HTMLDivElement;
   currentTime: number;
+  duration?: number;
   firstTimePlaying: boolean;
   fullscreen: boolean;
+  reachedEndOfPlayback: boolean;
   togglePlayPause: () => void;
   setPlayer: (player: VimeoPlayer) => void;
   setPlayerDomElement: (playerDomElement: HTMLDivElement) => void;
   setCurrentTime: (seconds: number) => void;
-  toggleFullscreen: () => void;
-  exitFullscreen: () => void;
-};
+  setDuration: (seconds: number) => void;
 
-const secondsToSkip = 6; // all videos have annoying 6 second intro animation - skip it when playing for first time
+  toggleFullscreen: () => void;
+  enterFullscreen: () => void;
+  exitFullscreen: () => void;
+
+  seekForward: (seconds: number) => void;
+  seekBackward: (seconds: number) => void;
+  seekTo: (seconds: number) => void;
+};
 
 export const createPlayerStore = () => {
   console.log("creating new video player store");
@@ -42,25 +49,55 @@ export const createPlayerStore = () => {
         firstTimePlaying: true,
         currentTime: 0,
         fullscreen: false,
+        reachedEndOfPlayback: false,
         togglePlayPause: () =>
           set((state) => {
-            if (state.firstTimePlaying) {
-              state.player?.seekTo(secondsToSkip, "seconds");
+            let reachedEndOfPlayback = state.reachedEndOfPlayback;
+            if (state.firstTimePlaying || reachedEndOfPlayback) {
+              state.player?.seekTo(0, "seconds");
+              reachedEndOfPlayback = false;
             }
-            return { playing: !state.playing, firstTimePlaying: false };
+            return {
+              playing: !state.playing,
+              firstTimePlaying: false,
+              reachedEndOfPlayback,
+            };
           }),
         setPlayer: (player) => set({ player }),
         setPlayerDomElement: (playerDomElement) => set({ playerDomElement }),
-        setCurrentTime: (seconds) => set({ currentTime: seconds }),
+        setCurrentTime: (seconds) =>
+          set((state) => {
+            console.log(seconds, state.duration);
+            const duration = state.duration;
+            if (!duration) return;
+            if (seconds > 0 && seconds >= duration) {
+              console.log("reached end of playback");
+              state.player?.seekTo(duration, "seconds");
+              return {
+                currentTime: duration,
+                playing: false,
+                reachedEndOfPlayback: true,
+              };
+            }
+            return { currentTime: seconds };
+          }),
+        setDuration: (seconds) => set({ duration: seconds }),
         toggleFullscreen: () => {
           set((state) => {
             if (state.fullscreen) {
-              screenfull.exit();
+              state.exitFullscreen();
             } else {
+              state.enterFullscreen();
+            }
+          });
+        },
+        enterFullscreen: () => {
+          set((state) => {
+            if (!state.fullscreen) {
               const domElement = state.playerDomElement;
               if (domElement) screenfull.request(domElement as HTMLDivElement);
             }
-            return { fullscreen: !state.fullscreen };
+            return { fullscreen: true };
           });
         },
         exitFullscreen: () => {
@@ -69,6 +106,30 @@ export const createPlayerStore = () => {
               screenfull.exit();
             }
             return { fullscreen: false };
+          });
+        },
+        seekForward: (seconds) => {
+          set((state) => {
+            state.player?.seekTo(
+              Math.min(
+                state.currentTime + seconds,
+                state.duration ?? state.currentTime
+              ),
+              "seconds"
+            );
+          });
+        },
+        seekBackward: (seconds) => {
+          set((state) => {
+            state.player?.seekTo(
+              Math.max(state.currentTime - seconds, 0),
+              "seconds"
+            );
+          });
+        },
+        seekTo: (seconds) => {
+          set((state) => {
+            state.player?.seekTo(seconds, "seconds");
           });
         },
       }))

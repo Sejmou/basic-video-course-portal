@@ -6,6 +6,13 @@ export const Pause = () => (
   <path fill="currentColor" d="M14,19H18V5H14M6,19H10V5H6V19Z" />
 );
 
+export const Replay = () => (
+  <path
+    fill="currentColor"
+    d="M 12 6 V 2 l -5 5 l 5 5 v -4 c 3.3 0 6 2.7 6 6 c 0 3.3 -2.7 6 -6 6 c -3.3 0 -6 -2.7 -6 -6 h -2 c 0 4.4 3.6 8 8 8 c 4.4 0 8 -3.6 8 -8 c 0 -4.4 -3.6 -8 -8 -8 z"
+  />
+);
+
 export const VolumeHigh = () => (
   <path
     fill="currentColor"
