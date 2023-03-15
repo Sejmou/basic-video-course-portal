@@ -48,6 +48,9 @@ type State = {
   setLoopStart: (seconds?: number) => void;
   setLoopEnd: (seconds?: number) => void;
   resetLoop: () => void;
+  resetLoopStart: () => void;
+  resetLoopEnd: () => void;
+  jumpToLoopStart: () => void;
 };
 
 // Vimeo's internal player API is not typed by react-player, so we type what we need ourselves
@@ -206,6 +209,24 @@ export const createPlayerStore = () => {
           set({
             loopInterval: undefined,
           });
+        },
+        jumpToLoopStart: () => {
+          const loopActive = get().looping;
+          const loopStart = get().loopInterval?.[0];
+          if (!loopActive || !loopStart) return;
+          get().player?.seekTo(loopStart, "seconds");
+        },
+        resetLoopStart: () => {
+          const loopInterval = get().loopInterval;
+          if (!loopInterval) return;
+          set({ loopInterval: [0, loopInterval[1]] });
+        },
+        resetLoopEnd: () => {
+          const loopInterval = get().loopInterval;
+          if (!loopInterval) return;
+          const duration = get().duration;
+          if (!duration) return;
+          set({ loopInterval: [loopInterval[0], duration] });
         },
       }))
     )
