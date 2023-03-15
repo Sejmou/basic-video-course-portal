@@ -28,7 +28,6 @@ type State = {
   setCurrentTime: (seconds: number) => void;
   setDuration: (seconds: number) => void;
 
-  toggleFullscreen: () => void;
   enterFullscreen: () => void;
   exitFullscreen: () => void;
 
@@ -67,11 +66,9 @@ export const createPlayerStore = () => {
         setPlayerDomElement: (playerDomElement) => set({ playerDomElement }),
         setCurrentTime: (seconds) =>
           set((state) => {
-            console.log(seconds, state.duration);
             const duration = state.duration;
             if (!duration) return;
             if (seconds > 0 && seconds >= duration) {
-              console.log("reached end of playback");
               state.player?.seekTo(duration, "seconds");
               return {
                 currentTime: duration,
@@ -82,15 +79,6 @@ export const createPlayerStore = () => {
             return { currentTime: seconds };
           }),
         setDuration: (seconds) => set({ duration: seconds }),
-        toggleFullscreen: () => {
-          set((state) => {
-            if (state.fullscreen) {
-              state.exitFullscreen();
-            } else {
-              state.enterFullscreen();
-            }
-          });
-        },
         enterFullscreen: () => {
           set((state) => {
             if (!state.fullscreen) {

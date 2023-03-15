@@ -173,11 +173,20 @@ const PlayPauseButton = ({ className }: { className?: string }) => {
 };
 
 const FullscreenButton = () => {
-  const toggleFullscreen = usePlayerStore((state) => state.toggleFullscreen);
+  const enterFullscreen = usePlayerStore((state) => state.enterFullscreen);
+  const exitFullscreen = usePlayerStore((state) => state.exitFullscreen);
   const fullscreen = usePlayerStore((state) => state.fullscreen);
 
+  const clickHandler = useCallback(() => {
+    if (fullscreen) {
+      exitFullscreen();
+    } else {
+      enterFullscreen();
+    }
+  }, [fullscreen, enterFullscreen, exitFullscreen]);
+
   return (
-    <IconButton onClick={toggleFullscreen}>
+    <IconButton onClick={clickHandler}>
       {fullscreen ? <FullscreenExit /> : <FullscreenEnter />}
     </IconButton>
   );

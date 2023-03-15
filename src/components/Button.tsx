@@ -7,7 +7,6 @@ type Props = {
   size?: "small" | "medium" | "large";
 };
 const Button = ({ children, onClick, colored, size }: Props) => {
-  console.log({ colored });
   return (
     <div className="flex flex-col items-center justify-center gap-4">
       <button
