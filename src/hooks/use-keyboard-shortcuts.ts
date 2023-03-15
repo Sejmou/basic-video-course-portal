@@ -26,9 +26,12 @@ export function useKeyboardShortcuts(
 
     const handleKeyDown = (event: KeyboardEvent) => {
       const mapKey = createKeybindingMapKey(event);
-      keyBindingsMap.get(mapKey)?.(event);
-      if (preventDefault) {
-        event.preventDefault();
+      const keyBinding = keyBindingsMap.get(mapKey);
+      if (keyBinding) {
+        keyBinding(event);
+        if (preventDefault) {
+          event.preventDefault();
+        }
       }
     };
 
