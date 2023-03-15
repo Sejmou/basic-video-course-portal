@@ -4,6 +4,7 @@ import { devtools } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import VimeoPlayer from "react-player/vimeo";
 import screenfull from "screenfull";
+import { WritableDraft } from "immer/dist/types/types-external";
 
 // note: we want to use a separate store for every video player instance
 // so that we can have multiple video players with different configs on the same page
@@ -34,6 +35,16 @@ type State = {
   seekForward: (seconds: number) => void;
   seekBackward: (seconds: number) => void;
   seekTo: (seconds: number) => void;
+
+  increasePlaybackRate: (amount: number) => void;
+  decreasePlaybackRate: (amount: number) => void;
+  resetPlaybackRate: () => void;
+};
+
+// Vimeo's internal player API is not typed by react-player, so we type what we need ourselves
+type VimeoInternalPlayer = {
+  setPlaybackRate: (playbackRate: number) => Promise<void>;
+  getPlaybackRate: () => Promise<number>;
 };
 
 export const createPlayerStore = () => {
@@ -43,7 +54,7 @@ export const createPlayerStore = () => {
     [["zustand/devtools", never], ["zustand/immer", never]]
   >(
     devtools(
-      immer((set) => ({
+      immer((set, get) => ({
         playing: false,
         firstTimePlaying: true,
         currentTime: 0,
@@ -120,6 +131,30 @@ export const createPlayerStore = () => {
             state.player?.seekTo(seconds, "seconds");
           });
         },
+        increasePlaybackRate: async (amount) => {
+          const player = get().player;
+          if (!player) return;
+          const internalPlayer = getInternalPlayer(player);
+          const currentPlaybackRate = await internalPlayer.getPlaybackRate();
+          await internalPlayer.setPlaybackRate(
+            Math.min(currentPlaybackRate + amount, 2)
+          );
+        },
+        decreasePlaybackRate: async (amount) => {
+          const player = get().player;
+          if (!player) return;
+          const internalPlayer = getInternalPlayer(player);
+          const currentPlaybackRate = await internalPlayer.getPlaybackRate();
+          await internalPlayer.setPlaybackRate(
+            Math.max(currentPlaybackRate - amount, 0.1)
+          );
+        },
+        resetPlaybackRate: async () => {
+          const player = get().player;
+          if (!player) return;
+          const internalPlayer = getInternalPlayer(player);
+          await internalPlayer.setPlaybackRate(1);
+        },
       }))
     )
   );
@@ -136,3 +171,7 @@ export const usePlayerStore = <T,>(selector: (state: State) => T) => {
   }
   return useStore(store, selector);
 };
+
+function getInternalPlayer(player: VimeoPlayer): VimeoInternalPlayer {
+  return player.getInternalPlayer() as VimeoInternalPlayer;
+}

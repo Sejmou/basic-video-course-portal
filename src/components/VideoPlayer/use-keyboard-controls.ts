@@ -7,6 +7,14 @@ export function useKeyboardControls() {
   const togglePlayPause = usePlayerStore((state) => state.togglePlayPause);
   const enterFullscreen = usePlayerStore((state) => state.enterFullscreen);
   const exitFullscreen = usePlayerStore((state) => state.exitFullscreen);
+  const increasePlaybackRate = usePlayerStore(
+    (state) => state.increasePlaybackRate
+  );
+  const decreasePlaybackRate = usePlayerStore(
+    (state) => state.decreasePlaybackRate
+  );
+  const resetPlaybackRate = usePlayerStore((state) => state.resetPlaybackRate);
+
   const playerDomElement = usePlayerStore((state) => state.playerDomElement);
 
   useKeyboardShortcuts(
@@ -16,6 +24,9 @@ export function useKeyboardControls() {
       [{ key: "esc" }, exitFullscreen],
       [{ key: "ArrowRight" }, () => seekForward(5)],
       [{ key: "ArrowLeft" }, () => seekBackward(5)],
+      [{ key: "+" }, () => increasePlaybackRate(0.1)],
+      [{ key: "-" }, () => decreasePlaybackRate(0.1)],
+      [{ key: "d" }, resetPlaybackRate],
     ],
     playerDomElement
   );
