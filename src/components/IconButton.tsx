@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { MouseEventHandler } from "react";
 
 type Props = {
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   children: React.ReactNode;
   className?: string;
 };

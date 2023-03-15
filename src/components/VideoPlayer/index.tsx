@@ -1,11 +1,18 @@
 import classNames from "classnames";
 import { useCallback, useEffect, useMemo, useRef } from "react";
-import { OnProgressProps } from "react-player/base";
 import VimeoPlayer from "react-player/vimeo";
 import ReactPlayer from "react-player/vimeo";
+import Button from "../Button";
+import HelpTooltip from "../HelpTooltip";
 import IconButton from "../IconButton";
+import Toggle from "../Toggle";
 import { FullscreenEnter, FullscreenExit, Pause, Play, Replay } from "./icons";
-import { createPlayerStore, PlayerContext, usePlayerStore } from "./store";
+import {
+  createPlayerStore,
+  getInternalPlayer,
+  PlayerContext,
+  usePlayerStore,
+} from "./store";
 import { useProgressPercentage } from "./use-derived-state";
 import { useKeyboardControls } from "./use-keyboard-controls";
 
@@ -13,13 +20,32 @@ const videoBaseUrl = "https://vimeo.com/";
 
 type Props = { videoId: string; title: string };
 const VideoPlayer = ({ videoId, title }: Props) => {
+  // TODO: move this logic into the store file if possible
   const store = useMemo(() => createPlayerStore(), []); // store should not be recreated on every rerender of this component
+
+  // TODO: if you manage to move this logic into the store file, you could also move this (using api instead of store hook like here after "maybe I wouldn't even use useEffect": https://github.com/pmndrs/zustand/issues/140#issuecomment-673898644)
+  useEffect(() => {
+    const pollCurrentTime = () => {
+      const player = store.getState().player;
+      if (!player) return;
+      const internalPlayer = getInternalPlayer(player);
+      if (internalPlayer) {
+        internalPlayer.getCurrentTime().then((time) => {
+          store.getState().setCurrentTime(time); // cannot set currentTime directly, because we have to check if a loop is active and optionally skip back to the loop start
+        });
+      }
+    };
+    const timer = setInterval(pollCurrentTime, 50);
+
+    return () => clearInterval(timer);
+  }, [store]);
 
   return (
     <PlayerContext.Provider value={store}>
       <div>
         <h3 className="text-lg font-semibold">{title}</h3>
         <PlayerWrapper videoId={videoId} />
+        <LoopControls />
       </div>
     </PlayerContext.Provider>
   );
@@ -95,12 +121,6 @@ const Player = ({ url }: { url: string }) => {
   }, [ref, setPlayer]);
   const playing = usePlayerStore((state) => state.playing);
   const setCurrentTime = usePlayerStore((state) => state.setCurrentTime);
-  const timeUpdateHandler = useCallback(
-    (ev: OnProgressProps) => {
-      setCurrentTime(ev.playedSeconds);
-    },
-    [setCurrentTime]
-  );
   const fullscreen = usePlayerStore((state) => state.fullscreen);
   useEffect(() => {
     if (ref.current) {
@@ -119,7 +139,6 @@ const Player = ({ url }: { url: string }) => {
       playing={playing}
       ref={ref}
       url={url}
-      onProgress={timeUpdateHandler}
       onDuration={setDuration}
       onSeek={setCurrentTime}
     ></ReactPlayer>
@@ -223,6 +242,50 @@ const Timeline = () => {
           }}
         />
       </div>
+    </div>
+  );
+};
+
+const LoopControls = () => {
+  const initialized = usePlayerStore((state) => !!state.duration);
+  const looping = usePlayerStore((state) => state.looping);
+  const toggleLoop = usePlayerStore((state) => state.toggleLoop);
+  const [start, end] = usePlayerStore((state) => state.loopInterval) ?? [];
+
+  const setStart = usePlayerStore((state) => state.setLoopStart);
+  const setEnd = usePlayerStore((state) => state.setLoopEnd);
+  const reset = usePlayerStore((state) => state.resetLoop);
+
+  return (
+    <div className="flex items-center">
+      {initialized && (
+        <>
+          <Toggle enabled={looping} onChange={toggleLoop} text="Loop" />
+          {looping && (
+            <div className="ml-1 flex items-center justify-center gap-1">
+              <Button size="extra-small" colored onClick={() => setStart()}>
+                Start
+              </Button>
+              <Button colored size="extra-small" onClick={() => setEnd()}>
+                Ende
+              </Button>
+              <span className="text-xs">
+                {start === undefined || end === undefined
+                  ? "(inaktiv)"
+                  : `${formatTime(start)} - ${formatTime(end)}`}
+              </span>
+              <HelpTooltip
+                text={
+                  "Setze den Start- und Endpunkt durch Klicken während der Wiedergabe"
+                }
+              />
+              <Button colored size="extra-small" onClick={reset}>
+                Zurücksetzen
+              </Button>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 };

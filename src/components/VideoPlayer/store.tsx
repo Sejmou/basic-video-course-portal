@@ -39,12 +39,22 @@ type State = {
   increasePlaybackRate: (amount: number) => void;
   decreasePlaybackRate: (amount: number) => void;
   resetPlaybackRate: () => void;
+
+  looping: boolean;
+  enableLoop: () => void;
+  disableLoop: () => void;
+  toggleLoop: () => void;
+  loopInterval?: [number, number];
+  setLoopStart: (seconds?: number) => void;
+  setLoopEnd: (seconds?: number) => void;
+  resetLoop: () => void;
 };
 
 // Vimeo's internal player API is not typed by react-player, so we type what we need ourselves
 type VimeoInternalPlayer = {
   setPlaybackRate: (playbackRate: number) => Promise<void>;
   getPlaybackRate: () => Promise<number>;
+  getCurrentTime: () => Promise<number>;
 };
 
 export const createPlayerStore = () => {
@@ -60,6 +70,7 @@ export const createPlayerStore = () => {
         currentTime: 0,
         fullscreen: false,
         reachedEndOfPlayback: false,
+        looping: false,
         togglePlayPause: () =>
           set((state) => {
             let reachedEndOfPlayback = state.reachedEndOfPlayback;
@@ -75,7 +86,7 @@ export const createPlayerStore = () => {
           }),
         setPlayer: (player) => set({ player }),
         setPlayerDomElement: (playerDomElement) => set({ playerDomElement }),
-        setCurrentTime: (seconds) =>
+        setCurrentTime: (seconds) => {
           set((state) => {
             const duration = state.duration;
             if (!duration) return;
@@ -88,7 +99,16 @@ export const createPlayerStore = () => {
               };
             }
             return { currentTime: seconds };
-          }),
+          });
+          const looping = get().looping;
+          const loopInterval = get().loopInterval;
+          if (looping && loopInterval) {
+            const [loopStart, loopEnd] = loopInterval;
+            if (seconds >= loopEnd) {
+              get().player?.seekTo(loopStart, "seconds");
+            }
+          }
+        },
         setDuration: (seconds) => set({ duration: seconds }),
         enterFullscreen: () => {
           set((state) => {
@@ -160,6 +180,33 @@ export const createPlayerStore = () => {
           const internalPlayer = getInternalPlayer(player);
           await internalPlayer.setPlaybackRate(1);
         },
+        enableLoop: () => set({ looping: true }),
+        disableLoop: () => set({ looping: false }),
+        toggleLoop: () => set((state) => ({ looping: !state.looping })),
+        setLoopStart: (seconds) => {
+          const loopStart = seconds ?? get().currentTime;
+          const duration = get().duration;
+          if (!duration) return;
+          const loopEnd = get().loopInterval?.[1] ?? duration;
+          set({
+            loopInterval: [loopStart, loopEnd],
+          });
+        },
+        setLoopEnd: (seconds) => {
+          const loopStart = get().loopInterval?.[0] ?? 0;
+          const loopEnd = seconds ?? get().currentTime;
+          const duration = get().duration;
+          if (!duration) return;
+          set({
+            loopInterval: [loopStart, loopEnd],
+          });
+          get().player?.seekTo(loopStart, "seconds");
+        },
+        resetLoop: () => {
+          set({
+            loopInterval: undefined,
+          });
+        },
       }))
     )
   );
@@ -177,7 +224,7 @@ export const usePlayerStore = <T,>(selector: (state: State) => T) => {
   return useStore(store, selector);
 };
 
-function getInternalPlayer(player: VimeoPlayer): VimeoInternalPlayer {
+export function getInternalPlayer(player: VimeoPlayer): VimeoInternalPlayer {
   return player.getInternalPlayer() as VimeoInternalPlayer;
 }
 
