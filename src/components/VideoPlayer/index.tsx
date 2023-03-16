@@ -49,7 +49,10 @@ const VideoPlayer = ({ videoId, title }: Props) => {
       <div className="w-full max-w-6xl">
         <h3 className="text-lg font-semibold">{title}</h3>
         <PlayerWrapper videoId={videoId} />
-        <LoopControls className="mt-1 w-full" />
+        <div className="mt-1 flex w-full">
+          <LoopControls className="w-full" />
+          <PlaybackRateControls />
+        </div>
       </div>
     </PlayerContext.Provider>
   );
@@ -317,3 +320,30 @@ const LoopControls = ({ className }: { className?: string }) => {
     </div>
   );
 };
+
+const PlaybackRateControls = () => {
+  const playbackRate = usePlayerStore((state) => state.playbackRate);
+  const increasePlaybackRate = usePlayerStore(
+    (state) => state.increasePlaybackRate
+  );
+  const decreasePlaybackRate = usePlayerStore(
+    (state) => state.decreasePlaybackRate
+  );
+
+  return (
+    <div className="flex items-center gap-2">
+      <span>Tempo</span>
+      <Button size="extra-small" onClick={() => decreasePlaybackRate(0.1)}>
+        -
+      </Button>
+      <span className="text-xs">{roundToNPlaces(playbackRate, 2)}x</span>
+      <Button size="extra-small" onClick={() => increasePlaybackRate(0.1)}>
+        +
+      </Button>
+    </div>
+  );
+};
+
+function roundToNPlaces(num: number, places: number) {
+  return Math.round(num * 10 ** places) / 10 ** places;
+}

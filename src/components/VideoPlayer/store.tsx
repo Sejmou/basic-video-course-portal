@@ -22,6 +22,7 @@ type State = {
   firstTimePlaying: boolean;
   fullscreen: boolean;
   reachedEndOfPlayback: boolean;
+  playbackRate: number;
   togglePlayPause: () => void;
   setPlayer: (player: VimeoPlayer) => void;
   setPlayerDomElement: (playerDomElement: HTMLDivElement) => void;
@@ -74,6 +75,7 @@ export const createPlayerStore = () => {
         fullscreen: false,
         reachedEndOfPlayback: false,
         looping: false,
+        playbackRate: 1,
         togglePlayPause: () =>
           set((state) => {
             let reachedEndOfPlayback = state.reachedEndOfPlayback;
@@ -167,6 +169,8 @@ export const createPlayerStore = () => {
           await internalPlayer.setPlaybackRate(
             Math.min(currentPlaybackRate + amount, 2)
           );
+          const playbackRate = await internalPlayer.getPlaybackRate();
+          set({ playbackRate });
         },
         decreasePlaybackRate: async (amount) => {
           const player = get().player;
@@ -176,12 +180,15 @@ export const createPlayerStore = () => {
           await internalPlayer.setPlaybackRate(
             Math.max(currentPlaybackRate - amount, 0.1)
           );
+          const playbackRate = await internalPlayer.getPlaybackRate();
+          set({ playbackRate });
         },
         resetPlaybackRate: async () => {
           const player = get().player;
           if (!player) return;
           const internalPlayer = getInternalPlayer(player);
           await internalPlayer.setPlaybackRate(1);
+          set({ playbackRate: 1 });
         },
         enableLoop: () => set({ looping: true }),
         disableLoop: () => set({ looping: false }),
