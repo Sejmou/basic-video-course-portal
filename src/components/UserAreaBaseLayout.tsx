@@ -13,7 +13,7 @@ function Layout({ children }: Props) {
     <>
       <main className="h-screen w-screen flex-col bg-gradient-to-b from-[#2e026d] to-[#15162c] py-8 px-4">
         <Card>
-          <div className="mb-2 flex w-full justify-between">
+          <div className="mb-2 flex w-full flex-wrap-reverse justify-between gap-y-1">
             <Breadcrumbs />
             <Button size="small" onClick={() => void signOut()}>
               Logout

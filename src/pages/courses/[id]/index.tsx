@@ -38,24 +38,13 @@ const Dashboard: NextPageWithLayout = () => {
                 <div className="flex h-full flex-col">
                   <div className="flex flex-1 flex-col">
                     <h3 className="text-lg font-semibold">{chapter.title}</h3>
-                    {/* <p className="text-sm text-gray-500">
-                          {course.description}
-                        </p> */}
                   </div>
                   <div className="mt-4 flex flex-row items-center justify-between">
-                    {/* <div className="flex flex-row items-center">
-                          <img
-                            src={course.author.avatar}
-                            alt={course.author.name}
-                            className="w-6 h-6 rounded-full"
-                          />  
-                          <p className="ml-2 text-sm text-gray-500">
-                            {course.author.name}
-                          </p>
-                        </div> */}
                     <div className="flex flex-row items-center">
                       <p className="text-sm text-gray-500">
-                        {chapter.videoCount} Videos
+                        {chapter.videoCount} Video
+                        {(chapter.videoCount > 1 || chapter.videoCount === 0) &&
+                          "s"}
                       </p>
                     </div>
                   </div>
