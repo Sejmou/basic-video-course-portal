@@ -45,7 +45,7 @@ const VideoPlayer = ({ videoId, title }: Props) => {
       <div>
         <h3 className="text-lg font-semibold">{title}</h3>
         <PlayerWrapper videoId={videoId} />
-        <LoopControls />
+        <LoopControls className="mt-1" />
       </div>
     </PlayerContext.Provider>
   );
@@ -246,7 +246,7 @@ const Timeline = () => {
   );
 };
 
-const LoopControls = () => {
+const LoopControls = ({ className }: { className?: string }) => {
   const initialized = usePlayerStore((state) => !!state.duration);
   const looping = usePlayerStore((state) => state.looping);
   const toggleLoop = usePlayerStore((state) => state.toggleLoop);
@@ -257,7 +257,7 @@ const LoopControls = () => {
   const reset = usePlayerStore((state) => state.resetLoop);
 
   return (
-    <div className="flex items-center">
+    <div className={classNames("flex items-center", className)}>
       {initialized && (
         <>
           <Toggle enabled={looping} onChange={toggleLoop} text="Loop" />

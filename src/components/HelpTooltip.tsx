@@ -3,7 +3,7 @@ import IconButton from "./IconButton";
 type Props = { text: string };
 const HelpTooltip = ({ text }: Props) => {
   return (
-    <div className="group relative fill-current text-gray-500 hover:text-gray-700">
+    <div className="group relative flex fill-current text-gray-500 hover:text-gray-700">
       <IconButton>
         <QuestionMark />
       </IconButton>
