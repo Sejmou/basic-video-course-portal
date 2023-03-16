@@ -14,7 +14,10 @@ import {
   usePlayerStore,
 } from "./store";
 import { useAutohide } from "./use-autohide";
-import { useProgressPercentage } from "./use-derived-state";
+import {
+  useLoopIntervalPercentage,
+  useProgressPercentage,
+} from "./use-derived-state";
 import { useKeyboardControls } from "./use-keyboard-controls";
 
 const videoBaseUrl = "https://vimeo.com/";
@@ -224,6 +227,7 @@ const FullscreenButton = () => {
 
 const Timeline = () => {
   const progress = useProgressPercentage();
+  const [loopStart, loopEnd] = useLoopIntervalPercentage();
   const seekTo = usePlayerStore((state) => state.seekToFraction);
   const clickHandler = useCallback(
     (ev: React.MouseEvent<HTMLDivElement>) => {
@@ -247,7 +251,24 @@ const Timeline = () => {
           style={{
             width: `${progress}%`,
           }}
-        />
+        ></div>
+        {/* loop markers */}
+        {loopStart && (
+          <div
+            className="loop-start absolute top-0 left-0 h-full w-[3px] -translate-x-[1.5px] bg-yellow-500"
+            style={{
+              left: `${loopStart}%`,
+            }}
+          />
+        )}
+        {loopEnd && (
+          <div
+            className="loop-start absolute top-0 left-0 h-full w-[3px] -translate-x-[1.5px] bg-yellow-500"
+            style={{
+              left: `${loopEnd}%`,
+            }}
+          />
+        )}
       </div>
     </div>
   );
