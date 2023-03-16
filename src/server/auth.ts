@@ -44,6 +44,36 @@ export const authOptions: NextAuthOptions = {
       }
       return session;
     },
+    async signIn({ user }) {
+      if (!user.email) {
+        return "/invite-only";
+      }
+
+      const userInDb = await prisma.user.findFirst({
+        where: {
+          email: user.email,
+        },
+      });
+      if (userInDb) {
+        return true;
+      }
+
+      const invite = await prisma.invite.findFirst({
+        where: {
+          email: user.email,
+        },
+      });
+      if (invite) {
+        await prisma.invite.delete({
+          where: {
+            id: invite.id,
+          },
+        });
+        return true;
+      }
+
+      return "/invite-only";
+    },
   },
   adapter: PrismaAdapter(prisma),
   providers: [

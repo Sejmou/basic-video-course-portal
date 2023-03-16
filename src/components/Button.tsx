@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
 type Props = {
-  onClick: () => void;
+  onClick?: () => void;
   children: React.ReactNode;
   variant?: "primary" | "transparent";
   size?: "extra-small" | "small" | "medium" | "large";
