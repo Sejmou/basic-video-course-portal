@@ -14,10 +14,7 @@ const Dashboard: NextPageWithLayout = () => {
     <>
       <Head>
         <title>Dashboard - Video Portal</title>
-        <meta
-          name="description"
-          content="A basic example for a video course portal, created with Next.js"
-        />
+        <meta name="description" content="Dein Dashboard mit allen Kursen." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>

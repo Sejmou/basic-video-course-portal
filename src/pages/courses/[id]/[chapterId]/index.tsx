@@ -19,10 +19,7 @@ const Videos: NextPageWithLayout = () => {
     <>
       <Head>
         <title>{title}</title>
-        <meta
-          name="description"
-          content="A basic example for a video course portal, created with Next.js"
-        />
+        <meta name="description" content="Videoübersicht für den Kurs" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {!videos.isLoading && videoData && (
