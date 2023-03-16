@@ -42,10 +42,10 @@ const VideoPlayer = ({ videoId, title }: Props) => {
 
   return (
     <PlayerContext.Provider value={store}>
-      <div>
+      <div className="w-full max-w-6xl">
         <h3 className="text-lg font-semibold">{title}</h3>
         <PlayerWrapper videoId={videoId} />
-        <LoopControls className="mt-1" />
+        <LoopControls className="mt-1 w-full" />
       </div>
     </PlayerContext.Provider>
   );
@@ -79,18 +79,17 @@ const PlayerWrapper = ({ videoId }: { videoId: string }) => {
 
   return (
     <div
-      className={classNames(
-        "justify-center focus:outline-none",
-        { "relative max-w-screen-lg": !fullscreen },
-        {
-          "absolute top-0 left-0 h-screen w-screen": fullscreen,
-        }
-      )}
+      className={classNames("relative w-full pt-[56.25%] focus:outline-none", {
+        "absolute top-0 left-0 h-screen w-screen": fullscreen,
+      })}
       ref={containerRef}
       tabIndex={-1} // required for keyboard controls hook to work
     >
       <ControlsContainer />
-      <Player url={`${videoBaseUrl}${videoId}`} />
+      <Player
+        url={`${videoBaseUrl}${videoId}`}
+        className="react-player absolute top-0 left-0 h-full w-full"
+      />
     </div>
   );
 };
@@ -101,7 +100,7 @@ const ControlsContainer = () => {
 
   return (
     <div
-      className="absolute top-0 left-0 right-0 bottom-0 select-none opacity-0 before:content-none focus-within:opacity-100 hover:opacity-100"
+      className="controls-container absolute top-0 left-0 right-0 bottom-0 z-10 select-none opacity-0 before:content-none focus-within:opacity-100 hover:opacity-100"
       onClick={togglePlayPause}
     >
       <div className="absolute bottom-0 left-0 h-1/4 w-full bg-gradient-to-t from-black to-transparent opacity-70"></div>
@@ -111,7 +110,7 @@ const ControlsContainer = () => {
   );
 };
 
-const Player = ({ url }: { url: string }) => {
+const Player = ({ url, className }: { url: string; className?: string }) => {
   const ref = useRef<VimeoPlayer>(null);
   const setPlayer = usePlayerStore((state) => state.setPlayer);
   useEffect(() => {
@@ -141,6 +140,9 @@ const Player = ({ url }: { url: string }) => {
       url={url}
       onDuration={setDuration}
       onSeek={setCurrentTime}
+      width="100%"
+      height="100%"
+      className={className}
     ></ReactPlayer>
   );
 };
