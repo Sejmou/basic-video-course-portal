@@ -22,11 +22,12 @@ const Dashboard: NextPageWithLayout = () => {
       </Head>
       <>
         <div className="mb-4 text-center">
-          <h1 className="mb-2 text-4xl font-bold">
-            <span className="align-top text-3xl">💃</span>Willkommen!{" "}
-            <span className="align-top text-3xl">🕺</span>
+          <h1 className="mb-2 text-3xl font-bold md:text-4xl">
+            <span className="align-middle text-2xl md:text-3xl">💃</span>
+            Willkommen!{" "}
+            <span className="align-middle text-2xl md:text-3xl">🕺</span>
           </h1>
-          <p className="">
+          <p>
             Folgende Kurse sind verfügbar. Sicher ist für dich auch etwas dabei
             😉
           </p>

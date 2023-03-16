@@ -27,7 +27,7 @@ const Videos: NextPageWithLayout = () => {
       </Head>
       {!videos.isLoading && videoData && (
         <div className="flex flex-col items-center gap-4">
-          <h1 className="text-4xl font-bold">{videoData.title}</h1>
+          <h1 className="text-3xl font-bold md:text-4xl">{videoData.title}</h1>
           <p className="text-lg">
             {videoData.videos.length} Video
             {(videoData.videos.length > 1 || videoData.videos.length == 0) &&

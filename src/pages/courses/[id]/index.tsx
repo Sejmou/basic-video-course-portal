@@ -27,7 +27,7 @@ const Dashboard: NextPageWithLayout = () => {
       </Head>
       {!courses.isLoading && courseData && (
         <div className="flex flex-col items-center justify-center gap-4">
-          <h1 className="text-4xl font-bold">{courseData.name}</h1>
+          <h1 className="text-3xl font-bold md:text-4xl">{courseData.name}</h1>
           <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {courseData.chapters.map((chapter) => (
               <Card
