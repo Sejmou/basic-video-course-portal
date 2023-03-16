@@ -7,7 +7,7 @@ const HelpTooltip = ({ text }: Props) => {
       <IconButton>
         <QuestionMark />
       </IconButton>
-      <span className="absolute top-6 z-50 hidden w-56 rounded bg-gray-800 p-2 text-xs text-white opacity-80 group-hover:block group-hover:scale-100">
+      <span className="absolute top-4 z-50 hidden w-72 rounded bg-gray-800 p-2 text-xs text-white opacity-80 group-hover:block group-hover:scale-100 dark:bg-black">
         {text}
       </span>
     </div>

@@ -261,7 +261,7 @@ const LoopControls = ({ className }: { className?: string }) => {
   return (
     <div className={classNames("flex items-center", className)}>
       {initialized && (
-        <>
+        <div className="flex gap-2">
           <Toggle enabled={looping} onChange={toggleLoop} text="Loop" />
           {looping && (
             <div className="flex items-center justify-center gap-1">
@@ -273,12 +273,12 @@ const LoopControls = ({ className }: { className?: string }) => {
               </Button>
               <span className="text-xs">
                 {start === undefined || end === undefined
-                  ? "(inaktiv)"
+                  ? "(Start- und Endpunkt setzen um Loop zu starten)"
                   : `${formatTime(start)} - ${formatTime(end)}`}
               </span>
               <HelpTooltip
                 text={
-                  "Setze den Start- und Endpunkt durch Klicken während der Wiedergabe"
+                  "Setze den Start- und Endpunkt durch Klick auf die Buttons während der Videowiedergabe."
                 }
               />
               <Button size="extra-small" onClick={reset}>
@@ -286,7 +286,7 @@ const LoopControls = ({ className }: { className?: string }) => {
               </Button>
             </div>
           )}
-        </>
+        </div>
       )}
     </div>
   );
