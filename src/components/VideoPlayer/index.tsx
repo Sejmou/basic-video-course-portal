@@ -86,9 +86,13 @@ const PlayerWrapper = ({ videoId }: { videoId: string }) => {
 
   return (
     <div
-      className={classNames("relative w-full pt-[56.25%] focus:outline-none", {
-        "absolute top-0 left-0 h-screen w-screen": fullscreen,
-      })}
+      className={classNames(
+        "player-wrapper relative w-full focus:outline-none",
+        {
+          "absolute top-0 left-0 h-screen w-screen": fullscreen,
+        },
+        { "pt-[56.25%]": !fullscreen } // need to set this as otherwise on narrow screens like smartphone video + controls would still be in 16:9 in fullscreen mode, causing them to be clipped
+      )}
       ref={containerRef}
       tabIndex={-1} // required for keyboard controls hook to work
     >
