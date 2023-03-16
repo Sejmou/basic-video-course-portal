@@ -13,6 +13,7 @@ import {
   PlayerContext,
   usePlayerStore,
 } from "./store";
+import { useAutohide } from "./use-autohide";
 import { useProgressPercentage } from "./use-derived-state";
 import { useKeyboardControls } from "./use-keyboard-controls";
 
@@ -96,12 +97,16 @@ const PlayerWrapper = ({ videoId }: { videoId: string }) => {
 
 const ControlsContainer = () => {
   const togglePlayPause = usePlayerStore((state) => state.togglePlayPause);
+  const playing = usePlayerStore((state) => state.playing);
   useKeyboardControls();
+  const ref = useRef<HTMLDivElement>(null);
+  useAutohide(ref.current, playing);
 
   return (
     <div
       className="controls-container absolute top-0 left-0 right-0 bottom-0 z-10 select-none opacity-0 before:content-none focus-within:opacity-100 hover:opacity-100"
       onClick={togglePlayPause}
+      ref={ref}
     >
       <div className="absolute bottom-0 left-0 h-1/4 w-full bg-gradient-to-t from-black to-transparent opacity-70"></div>
       <Timeline />
