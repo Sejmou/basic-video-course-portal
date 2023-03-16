@@ -49,8 +49,8 @@ const VideoPlayer = ({ videoId, title }: Props) => {
       <div className="w-full max-w-6xl">
         <h3 className="text-lg font-semibold">{title}</h3>
         <PlayerWrapper videoId={videoId} />
-        <div className="mt-1 flex w-full">
-          <LoopControls className="w-full" />
+        <div className="mt-1 flex w-full flex-col-reverse justify-between md:flex-row md:items-start">
+          <LoopControls />
           <PlaybackRateControls />
         </div>
       </div>
@@ -294,29 +294,33 @@ const LoopControls = ({ className }: { className?: string }) => {
   return (
     <div className={classNames("flex items-center", className)}>
       {initialized && (
-        <div className="flex gap-2">
-          <Toggle enabled={looping} onChange={toggleLoop} text="Loop" />
-          {looping && (
-            <div className="flex items-center justify-center gap-1">
-              <Button size="extra-small" onClick={() => setStart()}>
-                Start
-              </Button>
-              <Button size="extra-small" onClick={() => setEnd()}>
-                Ende
-              </Button>
-              <span className="text-xs">
-                {start === undefined || end === undefined
-                  ? "(Start- und Endpunkt setzen um Loop zu starten)"
-                  : `${formatTime(start)} - ${formatTime(end)}`}
-              </span>
+        <div className="flex flex-wrap gap-2">
+          <div className="flex w-full gap-1 md:w-fit">
+            <Toggle enabled={looping} onChange={toggleLoop} text="Loop" />
+            {looping && (
               <HelpTooltip
                 text={
-                  "Setze den Start- und Endpunkt durch Klick auf die Buttons während der Videowiedergabe."
+                  "Setze den Start- und Endpunkt während der Videowiedergabe mit den A- und B-Buttons."
                 }
               />
-              <Button size="extra-small" onClick={reset}>
-                Zurücksetzen
+            )}
+          </div>
+          {looping && (
+            <div className="flex flex-wrap items-center justify-center gap-1">
+              <Button size="extra-small" onClick={() => setStart()}>
+                A
               </Button>
+              <Button size="extra-small" onClick={() => setEnd()}>
+                B
+              </Button>
+              <Button size="extra-small" onClick={reset}>
+                Reset
+              </Button>
+              {start !== undefined && end !== undefined && (
+                <span className="text-xs md:order-first">
+                  {`${formatTime(start)} - ${formatTime(end)}`}
+                </span>
+              )}
             </div>
           )}
         </div>
