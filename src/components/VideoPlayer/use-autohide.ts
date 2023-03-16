@@ -10,7 +10,6 @@ export function useAutohide(
     if (!element) return;
     const opacityStyle = element.style.opacity;
     const cursorStyle = element.style.cursor;
-    console.log({ element, opacityStyle, cursorStyle });
 
     const hide = () => {
       element.style.opacity = "0";
@@ -36,10 +35,12 @@ export function useAutohide(
       return;
     }
 
+    const hasOpacityClass = element.classList.contains("opacity-0");
+    if (!hasOpacityClass) element.classList.add("opacity-0"); // hide per default, we set opacity to 1 on mousemove
+
     const handleMouseMove = () => {
       lastMouseMove = Date.now();
       show();
-      console.log("mousemove", lastMouseMove);
     };
 
     const timer = setInterval(() => {
@@ -51,6 +52,7 @@ export function useAutohide(
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
       element.removeEventListener("mouseleave", hide);
+      if (!hasOpacityClass) element.classList.remove("opacity-0");
       clearInterval(timer);
     };
   }, [element, active]);

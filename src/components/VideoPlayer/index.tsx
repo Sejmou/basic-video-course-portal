@@ -104,7 +104,7 @@ const ControlsContainer = () => {
 
   return (
     <div
-      className="controls-container absolute top-0 left-0 right-0 bottom-0 z-10 select-none opacity-0 before:content-none focus-within:opacity-100 hover:opacity-100"
+      className="absolute top-0 left-0 right-0 bottom-0 z-10 select-none before:content-none focus-within:opacity-100 hover:opacity-100"
       onClick={togglePlayPause}
       ref={ref}
     >
