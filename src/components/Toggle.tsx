@@ -8,7 +8,7 @@ type Props = {
 
 const Toggle = ({ enabled, onChange, text }: Props) => {
   return (
-    <div className="flex gap-1">
+    <div className="flex items-center gap-1">
       <Switch
         checked={enabled}
         onChange={onChange}

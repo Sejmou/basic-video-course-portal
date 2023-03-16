@@ -262,11 +262,11 @@ const LoopControls = () => {
         <>
           <Toggle enabled={looping} onChange={toggleLoop} text="Loop" />
           {looping && (
-            <div className="ml-1 flex items-center justify-center gap-1">
-              <Button size="extra-small" colored onClick={() => setStart()}>
+            <div className="flex items-center justify-center gap-1">
+              <Button size="extra-small" onClick={() => setStart()}>
                 Start
               </Button>
-              <Button colored size="extra-small" onClick={() => setEnd()}>
+              <Button size="extra-small" onClick={() => setEnd()}>
                 Ende
               </Button>
               <span className="text-xs">
@@ -279,7 +279,7 @@ const LoopControls = () => {
                   "Setze den Start- und Endpunkt durch Klicken während der Wiedergabe"
                 }
               />
-              <Button colored size="extra-small" onClick={reset}>
+              <Button size="extra-small" onClick={reset}>
                 Zurücksetzen
               </Button>
             </div>

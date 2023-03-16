@@ -15,7 +15,7 @@ function Layout({ children }: Props) {
         <Card>
           <div className="mb-2 flex w-full justify-between">
             <Breadcrumbs />
-            <Button size="small" colored onClick={() => void signOut()}>
+            <Button size="small" onClick={() => void signOut()}>
               Logout
             </Button>
           </div>
