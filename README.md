@@ -1,30 +1,15 @@
-# Create T3 App
+# Video Course Portal
+This is a website for a video course portal using videos hosted on Vimeo. I built a custom video player UI instead of the default Vimeo video player, with features that are particularly useful for dance videos (looping and slowing down parts of the video). I essentially rebuilt the website of the dancing school (which would have charged 5€ per month for a collection of videos that were publicly available (via Vimeo), but embedded in a player interface I didn't particularly like).
 
-IMPORTANT note: This somehow seems to crash when using CockroachDB and Node > 16. As a workaround just use Node v16 when running `yarn dev`.
-
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
-
-## What's next? How do I make an app with this?
-
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
-
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Technologies used
+This project builds on the [T3 Stack](https://github.com/t3-oss/create-t3-app). It includes
 
 - [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- [NextAuth.js](https://next-auth.js.org) for user authentication
+- [Prisma](https://prisma.io) for DB-related stuff
+- [Tailwind CSS](https://tailwindcss.com) for easier CSS
+- [tRPC](https://trpc.io) for seamless integration between frontend and backend (no need to write REST API endpoints, fully typesafe)
 
-## Learn More
+## Development Notes
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+IMPORTANT: This somehow seems to crash when using CockroachDB and Node > 16. As a workaround just use Node v16 when running `dev`.
