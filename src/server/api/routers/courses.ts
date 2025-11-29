@@ -9,6 +9,9 @@ import {
 export const coursesRouter = createTRPCRouter({
   getCourseList: protectedProcedure.query(async ({ ctx }) => {
     const courses = await ctx.prisma.course.findMany({
+      orderBy: {
+        name: "asc",
+      },
       select: {
         id: true,
         name: true,
@@ -41,6 +44,9 @@ export const coursesRouter = createTRPCRouter({
             id: true,
             name: true,
             chapters: {
+              orderBy: {
+                title: "asc",
+              },
               select: {
                 id: true,
                 title: true,
@@ -108,6 +114,9 @@ export const coursesRouter = createTRPCRouter({
             id: true,
             title: true,
             videos: {
+              orderBy: {
+                title: "asc",
+              },
               select: {
                 id: true,
                 title: true,
