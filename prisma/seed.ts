@@ -36,24 +36,39 @@ async function main() {
   );
 
   for (const course of courseData) {
-    const courseRecord = await prisma.course.create({
-      data: {
-        // replace numbers and dot at beginning of course name
-        name: course.courseName.replace(/^[0-9]+\.\s+/, ""),
-      },
+    const courseName = course.courseName.replace(/^[0-9]+\.\s+/, "");
+    // Find existing course or create new one
+    let courseRecord = await prisma.course.findFirst({
+      where: { name: courseName },
     });
+    if (!courseRecord) {
+      courseRecord = await prisma.course.create({
+        data: {
+          name: courseName,
+        },
+      });
+    }
 
     for (const chapter of course.content) {
       chapter.title = chapter.title.slice(
         chapter.title.indexOf(" - ") + 3,
         chapter.title.length
       );
-      const chapterRecord = await prisma.courseChapter.create({
-        data: {
+      // Find existing chapter or create new one
+      let chapterRecord = await prisma.courseChapter.findFirst({
+        where: {
           title: chapter.title,
           courseId: courseRecord.id,
         },
       });
+      if (!chapterRecord) {
+        chapterRecord = await prisma.courseChapter.create({
+          data: {
+            title: chapter.title,
+            courseId: courseRecord.id,
+          },
+        });
+      }
 
       for (const videoData of chapter.videoData) {
         const idxOfChapterName = videoData.title.indexOf(chapter.title);
@@ -63,8 +78,14 @@ async function main() {
             videoData.title.length
           );
         }
-        await prisma.video.create({
-          data: {
+        // Use upsert for videos since id is the primary key
+        await prisma.video.upsert({
+          where: { id: videoData.id },
+          update: {
+            title: videoData.title,
+            chapterId: chapterRecord.id,
+          },
+          create: {
             id: videoData.id,
             title: videoData.title,
             chapterId: chapterRecord.id,

@@ -7,13 +7,11 @@
         "videoData": [
           {
             "id": "480193073",
-            "title": "GK Boogie Grundschritt und Hipbump",
-            "filename": "GK Boogie Grundschritt und Hipbump.mp4"
+            "title": "GK Boogie Grundschritt und Hipbump"
           },
           {
-            "id": "499991415",
-            "title": "GK I Boogie Hand und platzwechsel",
-            "filename": "GK I Boogie Hand und platzwechsel.mp4"
+            "id": "1105480134",
+            "title": "GK BG Hand und Platzwechsel"
           }
         ]
       },
@@ -22,13 +20,11 @@
         "videoData": [
           {
             "id": "480558532",
-            "title": "GK Chacha Grundschritt",
-            "filename": "GK Chacha Grundschritt.mp4"
+            "title": "GK Chacha Grundschritt"
           },
           {
             "id": "488606671",
-            "title": "GK Cha Cha Cha Promenade Unterarmdrehung",
-            "filename": "GK Cha Cha Cha Promenade Unterarmdrehung.mp4"
+            "title": "GK Cha Cha Cha Promenade Unterarmdrehung"
           }
         ]
       },
@@ -37,8 +33,7 @@
         "videoData": [
           {
             "id": "486331440",
-            "title": "GK Langsamer Walzer 4x4 Rechtsdrehung",
-            "filename": "GK Langsamer Walzer 4x4 Rechtsdrehung.mp4"
+            "title": "GK Langsamer Walzer 4x4 Rechtsdrehung"
           }
         ]
       },
@@ -47,13 +42,11 @@
         "videoData": [
           {
             "id": "486330383",
-            "title": "GK Quickstep Grundschritt",
-            "filename": "GK Quickstep Grundschritt.mp4"
+            "title": "GK Quickstep Grundschritt"
           },
           {
             "id": "491296035",
-            "title": "GK Quickstep Wiegeschrittdrehung",
-            "filename": "GK Quickstep Wiegeschrittdrehung.mp4"
+            "title": "GK Quickstep Wiegeschrittdrehung"
           }
         ]
       },
@@ -62,13 +55,11 @@
         "videoData": [
           {
             "id": "488104951",
-            "title": "GK Rumba Grundschritt und Unterarmdrehung",
-            "filename": "GK Rumba Grundschritt und Unterarmdrehung.mp4"
+            "title": "GK Rumba Grundschritt und Unterarmdrehung"
           },
           {
             "id": "502272675",
-            "title": "GK Rumba Promenade mit Unterarmdrehung",
-            "filename": "GK Rumba Promenade mit Unterarmdrehung.mp4"
+            "title": "GK Rumba Promenade mit Unterarmdrehung"
           }
         ]
       },
@@ -77,8 +68,7 @@
         "videoData": [
           {
             "id": "491289796",
-            "title": "GK Samba Grundschritt Whisk",
-            "filename": "GK Samba Grundschritt Whisk.mp4"
+            "title": "GK Samba Grundschritt Whisk"
           }
         ]
       },
@@ -87,13 +77,11 @@
         "videoData": [
           {
             "id": "488616881",
-            "title": "GK Tango Grundschritt",
-            "filename": "GK Tango Grundschritt.mp4"
+            "title": "GK Tango Grundschritt"
           },
           {
             "id": "502284786",
-            "title": "GK Tango Promenade",
-            "filename": "GK Tango Promenade.mp4"
+            "title": "GK Tango Promenade"
           }
         ]
       },
@@ -102,8 +90,7 @@
         "videoData": [
           {
             "id": "479387469",
-            "title": "GK Wiener Walzer Grundschritt",
-            "filename": "GK Wiener Walzer Grundschritt.mp4"
+            "title": "GK Wiener Walzer Grundschritt"
           }
         ]
       }
@@ -116,14 +103,12 @@
         "title": "02. Fortgeschritten - Boogie",
         "videoData": [
           {
-            "id": "486084449",
-            "title": "FG BG Sweetheart",
-            "filename": "FG BG Sweetheart.mp4"
+            "id": "1105476840",
+            "title": "FG BG American Spin"
           },
           {
-            "id": "498291010",
-            "title": "FG BG American Spin",
-            "filename": "FG BG American Spin.mp4"
+            "id": "1105477037",
+            "title": "FG BG Sweetheart"
           }
         ]
       },
@@ -131,9 +116,8 @@
         "title": "02. Fortgeschritten - Chachacha",
         "videoData": [
           {
-            "id": "488179621",
-            "title": "FG CC Hand to Hand, Spot Turn",
-            "filename": "FG CC Hand to Hand, Spot Turn.mp4"
+            "id": "1105477443",
+            "title": "FG CC Hand to Hand, Spot Turn"
           }
         ]
       },
@@ -141,9 +125,8 @@
         "title": "02. Fortgeschritten - Langsamer Walzer",
         "videoData": [
           {
-            "id": "479960286",
-            "title": "FG LW Linksdrehung",
-            "filename": "FG LW Linksdrehung.mp4"
+            "id": "1105477806",
+            "title": "FG LW Linksdrehung"
           }
         ]
       },
@@ -151,9 +134,8 @@
         "title": "02. Fortgeschritten - Quickstep",
         "videoData": [
           {
-            "id": "477613086",
-            "title": "FG QS Chasse Lockstep",
-            "filename": "FG QS Chasse Lockstep.mp4"
+            "id": "1105478055",
+            "title": "FG QS Progressive Chasse, Lockstep"
           }
         ]
       },
@@ -161,9 +143,8 @@
         "title": "02. Fortgeschritten - Rumba",
         "videoData": [
           {
-            "id": "499286141",
-            "title": "FG RB Spanish Arms",
-            "filename": "FG RB Spanish Arms.mp4"
+            "id": "1105478368",
+            "title": "FG RB Spanish Arms"
           }
         ]
       },
@@ -171,14 +152,12 @@
         "title": "02. Fortgeschritten - Samba",
         "videoData": [
           {
-            "id": "479970290",
-            "title": "FG SB Unterarmdrehung",
-            "filename": "FG SB Unterarmdrehung.mp4"
+            "id": "1105478877",
+            "title": "FG SB Damensolo"
           },
           {
-            "id": "498291784",
-            "title": "FG SB Samba Walks",
-            "filename": "FG SB Samba Walks.mp4"
+            "id": "1105479229",
+            "title": "FG SB Samba Walks"
           }
         ]
       },
@@ -186,9 +165,8 @@
         "title": "02. Fortgeschritten - Tango",
         "videoData": [
           {
-            "id": "490841620",
-            "title": "FG TG Brush Tap, Linksdrehung",
-            "filename": "FG TG Brush Tap, Linksdrehung.mp4"
+            "id": "1105479484",
+            "title": "FG TG Brush Tap, Linksdrehung"
           }
         ]
       },
@@ -196,9 +174,8 @@
         "title": "02. Fortgeschritten - Wiener Walzer",
         "videoData": [
           {
-            "id": "488178046",
-            "title": "FG WW Rechtsdrehung auf Linie",
-            "filename": "FG WW Rechtsdrehung auf Linie.mp4"
+            "id": "1105479874",
+            "title": "FG WW Rechtsdrehung auf Linie"
           }
         ]
       }
@@ -212,8 +189,7 @@
         "videoData": [
           {
             "id": "496886387",
-            "title": "BR BG Schulterfasser, Unterarmdrehung, Schlauferl",
-            "filename": "BR BG Schulterfasser, Unterarmdrehung, Schlauferl.mp4"
+            "title": "BR BG Schulterfasser, Unterarmdrehung, Schlauferl"
           }
         ]
       },
@@ -222,8 +198,7 @@
         "videoData": [
           {
             "id": "481449403",
-            "title": "BR Chachacha Lasso und Shoulder to shoulder",
-            "filename": "BR Chachacha Lasso und Shoulder to shoulder.mp4"
+            "title": "BR Chachacha Lasso und Shoulder to shoulder"
           }
         ]
       },
@@ -232,8 +207,7 @@
         "videoData": [
           {
             "id": "478617204",
-            "title": "BR Langsamer Walzer Outside Change, Natural Spin Turn",
-            "filename": "BR Langsamer Walzer Outside Change, Natural Spin Turn.mp4"
+            "title": "BR Langsamer Walzer Outside Change, Natural Spin Turn"
           }
         ]
       },
@@ -242,13 +216,11 @@
         "videoData": [
           {
             "id": "481450419",
-            "title": "BR Paso Doble Grundschritt",
-            "filename": "BR Paso Doble Grundschritt.mp4"
+            "title": "BR Paso Doble Grundschritt"
           },
           {
             "id": "503143286",
-            "title": "BR Paso Doble Linksdrehung, Promenadenrechtsdrehung",
-            "filename": "BR Paso Doble Linksdrehung, Promenadenrechtsdrehung.mp4"
+            "title": "BR Paso Doble Linksdrehung, Promenadenrechtsdrehung"
           }
         ]
       },
@@ -257,8 +229,7 @@
         "videoData": [
           {
             "id": "489510459",
-            "title": "BR Quickstep Spin Turn, Linksdrehung",
-            "filename": "BR Quickstep Spin Turn, Linksdrehung.mp4"
+            "title": "BR Quickstep Spin Turn, Linksdrehung"
           }
         ]
       },
@@ -267,8 +238,7 @@
         "videoData": [
           {
             "id": "500538299",
-            "title": "BR RB Rumbarolle",
-            "filename": "BR RB Rumbarolle.mp4"
+            "title": "BR RB Rumbarolle"
           }
         ]
       },
@@ -277,8 +247,7 @@
         "videoData": [
           {
             "id": "486894369",
-            "title": "BR Samba Side Samba Walks, Argentine Kicks",
-            "filename": "BR Samba Side Samba Walks, Argentine Kicks.mp4"
+            "title": "BR Samba Side Samba Walks, Argentine Kicks"
           }
         ]
       },
@@ -287,8 +256,7 @@
         "videoData": [
           {
             "id": "486889074",
-            "title": "BR Tango Five Step",
-            "filename": "BR Tango Five Step.mp4"
+            "title": "BR Tango Five Step"
           }
         ]
       },
@@ -297,976 +265,1222 @@
         "videoData": [
           {
             "id": "404592165",
-            "title": "WW Bronze",
-            "filename": "WW Bronze.mp4"
+            "title": "WW Bronze"
           }
         ]
       }
     ]
   },
   {
-    "courseName": "04. Silber",
+    "courseName": "04. Silber I",
     "content": [
       {
-        "title": "04. Silber - Chachacha",
+        "title": "04. Silber I - Chachacha",
         "videoData": [
           {
             "id": "481467160",
-            "title": "SI Cha Cha Cha Fan Alemana",
-            "filename": "SI Cha Cha Cha Fan Alemana.mp4"
+            "title": "SI Cha Cha Cha Fan Alemana"
           }
         ]
       },
       {
-        "title": "04. Silber - Jive",
+        "title": "04. Silber I - Jive",
         "videoData": [
           {
             "id": "486523604",
-            "title": "SI Jive Grundschritte",
-            "filename": "SI Jive Grundschritte.mp4"
+            "title": "SI Jive Grundschritte"
           },
           {
             "id": "500132244",
-            "title": "SI Jive Schulterfasser + Kicks",
-            "filename": "SI Jive Schulterfasser + Kicks.mp4"
+            "title": "SI Jive Schulterfasser + Kicks"
           }
         ]
       },
       {
-        "title": "04. Silber - Langsamer Walzer",
+        "title": "04. Silber I - Langsamer Walzer",
         "videoData": [
           {
             "id": "489010509",
-            "title": "SI Langsamer Walzer Whisk Chasse",
-            "filename": "SI Langsamer Walzer Whisk Chasse.mp4"
+            "title": "SI Langsamer Walzer Whisk Chasse"
           }
         ]
       },
       {
-        "title": "04. Silber - Paso Doble",
+        "title": "04. Silber I - Paso Doble",
         "videoData": [
           {
             "id": "502679450",
-            "title": "SI Paso Doble Coup de Pique",
-            "filename": "SI Paso Doble Coup de Pique.mp4"
+            "title": "SI Paso Doble Coup de Pique"
           }
         ]
       },
       {
-        "title": "04. Silber - Quickstep",
-        "videoData": [
-          {
-            "id": "478123326",
-            "title": "SI Quickstep Tipplechasse",
-            "filename": "SI Quickstep Tipplechasse.mp4"
-          }
-        ]
-      },
-      {
-        "title": "04. Silber - Rumba",
-        "videoData": [
-          {
-            "id": "492179796",
-            "title": "SI Rumba inklus. Close Hip twist",
-            "filename": "SI Rumba inklus. Close Hip twist.mp4"
-          }
-        ]
-      },
-      {
-        "title": "04. Silber - Samba",
-        "videoData": [
-          {
-            "id": "500133482",
-            "title": "SI Samba Botafogo",
-            "filename": "SI Samba Botafogo.mp4"
-          }
-        ]
-      },
-      {
-        "title": "04. Silber - Tango",
-        "videoData": [
-          {
-            "id": "486521104",
-            "title": "SI Tango Promenadenrechtsdrehung",
-            "filename": "SI Tango Promenadenrechtsdrehung.mp4"
-          }
-        ]
-      },
-      {
-        "title": "04. Silber - Wiener Walzer",
+        "title": "04. Silber I - Wiener Walzer",
         "videoData": [
           {
             "id": "481466442",
-            "title": "SI Wiener Walzer Linkswalzer",
-            "filename": "SI Wiener Walzer Linkswalzer.mp4"
+            "title": "SI Wiener Walzer Linkswalzer"
           },
           {
             "id": "489016872",
-            "title": "SI Wiener Walzer Übergänge",
-            "filename": "SI Wiener Walzer Übergänge.mp4"
+            "title": "SI Wiener Walzer Übergänge"
           }
         ]
       }
     ]
   },
   {
-    "courseName": "05. Gold I",
+    "courseName": "05. Silber II",
     "content": [
       {
-        "title": "05. Gold I - Jive",
+        "title": "05. Silber II - Quickstep",
         "videoData": [
           {
-            "id": "477604813",
-            "title": "GO I JV Stop and Go",
-            "filename": "GO I JV Stop and Go.mp4"
-          },
-          {
-            "id": "490862847",
-            "title": "GO I JV Link and Whip",
-            "filename": "GO I JV Link and Whip.mp4"
+            "id": "478123326",
+            "title": "SI Quickstep Tipplechasse"
           }
         ]
       },
       {
-        "title": "05. Gold I - Langsamer Walzer",
+        "title": "05. Silber II - Rumba",
         "videoData": [
           {
-            "id": "477615441",
-            "title": "GO I LW Impetus",
-            "filename": "GO I LW Impetus.mp4"
-          },
-          {
-            "id": "498295377",
-            "title": "GO I LW Flechte",
-            "filename": "GO I LW Flechte.mp4"
+            "id": "492179796",
+            "title": "SI Rumba inklus. Close Hip twist"
           }
         ]
       },
       {
-        "title": "05. Gold I - Rumba",
+        "title": "05. Silber II - Samba",
         "videoData": [
           {
-            "id": "479998012",
-            "title": "GO I RB Opening Out, Spiral",
-            "filename": "GO I RB Opening Out, Spiral.mp4"
-          },
-          {
-            "id": "499300345",
-            "title": "GO I RB Opening Out, Spiral, Aida",
-            "filename": "GO I RB Opening Out, Spiral, Aida.mp4"
+            "id": "500133482",
+            "title": "SI Samba Botafogo"
           }
         ]
       },
       {
-        "title": "05. Gold I - Samba",
+        "title": "05. Silber II - Slowfox",
         "videoData": [
           {
-            "id": "490860528",
-            "title": "GO I SB Criss Cross",
-            "filename": "GO I SB Criss Cross.mp4"
+            "id": "864394914",
+            "title": "Video 1"
           }
         ]
       },
       {
-        "title": "05. Gold I - Wiener Walzer",
+        "title": "05. Silber II - Tango",
         "videoData": [
           {
-            "id": "486082904",
-            "title": "GO I WW Offener Walzer",
-            "filename": "GO I WW Offener Walzer.mp4"
+            "id": "486521104",
+            "title": "SI Tango Promenadenrechtsdrehung"
           }
         ]
       }
     ]
   },
   {
-    "courseName": "06. Gold II",
+    "courseName": "06. Gold I",
     "content": [
       {
-        "title": "06. Gold II - Cha Cha Cha",
+        "title": "06. Gold I - Jive",
+        "videoData": [
+          {
+            "id": "1105480455",
+            "title": "GO I JV Link and Whip"
+          },
+          {
+            "id": "1105480699",
+            "title": "GO I JV Stop and Go"
+          }
+        ]
+      },
+      {
+        "title": "06. Gold I - Langsamer Walzer",
+        "videoData": [
+          {
+            "id": "1105481156",
+            "title": "GO I LW Impetus"
+          },
+          {
+            "id": "1105480954",
+            "title": "GO I LW Flechte"
+          }
+        ]
+      },
+      {
+        "title": "06. Gold I - Rumba",
+        "videoData": [
+          {
+            "id": "1105481796",
+            "title": "GO I RB Opening out, Spiral"
+          },
+          {
+            "id": "1105481346",
+            "title": "GO I RB Opening out, Spiral, Aida, Cuban Rocks"
+          }
+        ]
+      },
+      {
+        "title": "06. Gold I - Samba",
+        "videoData": [
+          {
+            "id": "1106197139",
+            "title": "GO I SB Criss Cross"
+          }
+        ]
+      },
+      {
+        "title": "06. Gold I - Wiener Walzer",
+        "videoData": [
+          {
+            "id": "1105482148",
+            "title": "GO I WW Offener Walzer"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseName": "07. Gold II",
+    "content": [
+      {
+        "title": "07. Gold II - Cha Cha Cha",
         "videoData": [
           {
             "id": "480559341",
-            "title": "GO II Cha Cha Three Chachas",
-            "filename": "GO II Cha Cha Three Chachas.mp4"
+            "title": "GO II Cha Cha Three Chachas"
           },
           {
-            "id": "499992376",
-            "title": "GO II Cha cha Hockeystick und Natural Top",
-            "filename": "GO II Cha cha Hockeystick und Natural Top.mp4"
+            "id": "1105482492",
+            "title": "GO II CC Hockey Stick, Natural Top"
           }
         ]
       },
       {
-        "title": "06. Gold II - Paso Doble",
+        "title": "07. Gold II - Paso Doble",
         "videoData": [
           {
             "id": "486332241",
-            "title": "GO II Paso Doble Syncopated Seperation",
-            "filename": "GO II Paso Doble Syncopated Seperation.mp4"
+            "title": "GO II Paso Doble Syncopated Seperation"
           },
           {
             "id": "502668269",
-            "title": "GO II Paso Doble Spanish Line & Flamenco Taps",
-            "filename": "GO II Paso Doble Spanish Line & Flamenco Taps.mp4"
+            "title": "GO II Paso Doble Spanish Line & Flamenco Taps"
           }
         ]
       },
       {
-        "title": "06. Gold II - Quickstep",
+        "title": "07. Gold II - Quickstep",
         "videoData": [
           {
             "id": "491314832",
-            "title": "GO II Quickstep V6",
-            "filename": "GO II Quickstep V6.mp4"
+            "title": "GO II Quickstep V6"
           }
         ]
       },
       {
-        "title": "06. Gold II - Tango",
+        "title": "07. Gold II - Tango",
         "videoData": [
           {
             "id": "479386089",
-            "title": "GO II Tango Valentino & Kehre",
-            "filename": "GO II Tango Valentino & Kehre.mp4"
+            "title": "GO II Tango Valentino & Kehre"
           }
         ]
       }
     ]
   },
   {
-    "courseName": "07. Goldstar I",
+    "courseName": "08. Goldstar I",
     "content": [
       {
-        "title": "07. Goldstar I - Jive",
+        "title": "08. Goldstar I - Jive",
         "videoData": [
           {
             "id": "481445626",
-            "title": "GS I Jive Promenade Walks",
-            "filename": "GS I Jive Promenade Walks.mp4"
+            "title": "GS I Jive Promenade Walks"
           },
           {
             "id": "500553138",
-            "title": "GS I Jive Dos a Dos",
-            "filename": "GS I Jive Dos a Dos.mp4"
+            "title": "GS I Jive Dos a Dos"
           }
         ]
       },
       {
-        "title": "07. Goldstar I - Langsamer Walzer",
+        "title": "08. Goldstar I - Langsamer Walzer",
         "videoData": [
           {
             "id": "478615714",
-            "title": "GS I LW Reverse Corte, Back Whisk, Wing, Progressive Chasse to right",
-            "filename": "GS I LW Reverse Corte, Back Whisk, Wing, Progressive Chasse to right.mp4"
+            "title": "GS I LW Reverse Corte, Back Whisk, Wing, Progressive Chasse to right"
           }
         ]
       },
       {
-        "title": "07. Goldstar I - Rumba",
+        "title": "08. Goldstar I - Rumba",
         "videoData": [
           {
             "id": "503158122",
-            "title": "GS I Rumba Sliding Doors, Spiral",
-            "filename": "GS I Rumba Sliding Doors, Spiral.mp4"
+            "title": "GS I Rumba Sliding Doors, Spiral"
           },
           {
             "id": "504433690",
-            "title": "GS I Rumba Open Hiptwist",
-            "filename": "GS I Rumba Open Hiptwist.mp4"
+            "title": "GS I Rumba Open Hiptwist"
           }
         ]
       },
       {
-        "title": "07. Goldstar I - Samba",
+        "title": "08. Goldstar I - Samba",
         "videoData": [
           {
             "id": "488101949",
-            "title": "GS I SB Rolling of the Arms",
-            "filename": "GS I SB Rolling of the Arms.mp4"
+            "title": "GS I SB Rolling of the Arms"
           },
           {
             "id": "503159230",
-            "title": "GS I Samba Linksdrehung",
-            "filename": "GS I Samba Linksdrehung.mp4"
+            "title": "GS I Samba Linksdrehung"
           }
         ]
       },
       {
-        "title": "07. Goldstar I - Wiener Walzer",
+        "title": "08. Goldstar I - Wiener Walzer",
         "videoData": [
           {
             "id": "492203937",
-            "title": "GS I WW Runaround",
-            "filename": "GS I WW Runaround.mp4"
+            "title": "GS I WW Runaround"
           }
         ]
       }
     ]
   },
   {
-    "courseName": "08. Goldstar II",
+    "courseName": "09. Goldstar II",
     "content": [
       {
-        "title": "08. Goldstar II - Chachacha",
+        "title": "09. Goldstar II - Chachacha",
         "videoData": [
           {
             "id": "500015278",
-            "title": "GS II Chacha Turkish Towel",
-            "filename": "GS II Chacha Turkish Towel.mp4"
+            "title": "GS II Chacha Turkish Towel"
           },
           {
             "id": "594124610",
-            "title": "GSII ChaCha Close Hip Twist.mp4",
-            "filename": "GSII ChaCha Close Hip Twist.mp4.mp4"
+            "title": "Video 2"
           }
         ]
       },
       {
-        "title": "08. Goldstar II - Paso Doble",
+        "title": "09. Goldstar II - Paso Doble",
         "videoData": [
           {
             "id": "478159317",
-            "title": "GS II Paso Doble Chasse Cape",
-            "filename": "GS II Paso Doble Chasse Cape.mp4"
+            "title": "GS II Paso Doble Chasse Cape"
           }
         ]
       },
       {
-        "title": "08. Goldstar II - Quickstep",
+        "title": "09. Goldstar II - Quickstep",
         "videoData": [
           {
             "id": "500013640",
-            "title": "GS II Quickstep Osterglocken",
-            "filename": "GS II Quickstep Osterglocken.mp4"
+            "title": "GS II Quickstep Osterglocken"
           },
           {
             "id": "503080327",
-            "title": "GS II Quickstep Pendel Osterglocken",
-            "filename": "GS II Quickstep Pendel Osterglocken.mp4"
+            "title": "GS II Quickstep Pendel Osterglocken"
           }
         ]
       },
       {
-        "title": "08. Goldstar II - Tango",
+        "title": "09. Goldstar II - Tango",
         "videoData": [
           {
             "id": "481468972",
-            "title": "GS II Tango Twist Turn",
-            "filename": "GS II Tango Twist Turn.mp4"
+            "title": "GS II Tango Twist Turn"
           },
           {
             "id": "500135528",
-            "title": "GS II Tango Telemark & Flic Flac",
-            "filename": "GS II Tango Telemark & Flic Flac.mp4"
+            "title": "GS II Tango Telemark & Flic Flac"
           }
         ]
       }
     ]
   },
   {
-    "courseName": "09. Diamant A",
+    "courseName": "10. Diamant",
     "content": [
       {
-        "title": "09. Diamant A - Chachacha",
+        "title": "10. Diamant - Block A",
         "videoData": [
           {
-            "id": "496869566",
-            "title": "DM A Cha Cha Three Cha Cha Cha's",
-            "filename": "DM A Cha Cha Three Cha Cha Cha's.mp4"
-          }
-        ]
-      },
-      {
-        "title": "09. Diamant A - Jive",
-        "videoData": [
-          {
-            "id": "496870465",
-            "title": "DM A Jive Toe Heel swivel",
-            "filename": "DM A Jive Toe Heel swivel.mp4"
-          }
-        ]
-      },
-      {
-        "title": "09. Diamant A - Langsamer Walzer",
-        "videoData": [
-          {
-            "id": "481468122",
-            "title": "DM A Langsamer Walzer Left Whisk und Outside Spin",
-            "filename": "DM A Langsamer Walzer Left Whisk und Outside Spin.mp4"
-          }
-        ]
-      },
-      {
-        "title": "09. Diamant A - Paso Doble",
-        "videoData": [
+            "id": "893317165",
+            "title": "Video 1"
+          },
           {
             "id": "486750084",
-            "title": "DM A Paso Doble Sixteen",
-            "filename": "DM A Paso Doble Sixteen.mp4"
+            "title": "DM A Paso Doble Sixteen"
+          },
+          {
+            "id": "481468122",
+            "title": "DM A Langsamer Walzer Left Whisk und Outside Spin"
+          },
+          {
+            "id": "496870465",
+            "title": "DM A Jive Toe Heel swivel"
           }
         ]
-      }
-    ]
-  },
-  {
-    "courseName": "10. Diamant B",
-    "content": [
+      },
       {
-        "title": "10. Diamant B - Quickstep",
+        "title": "10. Diamant - Block B",
         "videoData": [
           {
             "id": "500370872",
-            "title": "DM B Quickstep Fishtail",
-            "filename": "DM B Quickstep Fishtail.mp4"
-          }
-        ]
-      },
-      {
-        "title": "10. Diamant B - Rumba",
-        "videoData": [
+            "title": "DM B Quickstep Fishtail"
+          },
           {
-            "id": "491997116",
-            "title": "DM B Rumba Natural top",
-            "filename": "DM B Rumba Natural top.mp4"
-          }
-        ]
-      },
-      {
-        "title": "10. Diamant B - Samba",
-        "videoData": [
+            "id": "864388064",
+            "title": "Video 2"
+          },
           {
             "id": "502706393",
-            "title": "DM B Samba Drop Voltas",
-            "filename": "DM B Samba Drop Voltas.mp4"
+            "title": "DM B Samba Drop Voltas"
+          },
+          {
+            "id": "1105476486",
+            "title": "DM B TG Viennese Cross, Reverse Five Step"
           }
         ]
       },
       {
-        "title": "10. Diamant B - Tango",
-        "videoData": [
-          {
-            "id": "505335759",
-            "title": "DM B Tango Reverse Five Step",
-            "filename": "DM B Tango Reverse Five Step.mp4"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "courseName": "11. Diamant C",
-    "content": [
-      {
-        "title": "11. Diamant C - Chachacha",
+        "title": "10. Diamant - Block C",
         "videoData": [
           {
             "id": "508502463",
-            "title": "DM C Cha Cha Cuban Breaks",
-            "filename": "DM C Cha Cha Cuban Breaks.mp4"
-          }
-        ]
-      },
-      {
-        "title": "11. Diamant C - Jive",
-        "videoData": [
+            "title": "DM C Cha Cha Cuban Breaks"
+          },
           {
             "id": "510785449",
-            "title": "DM C Jive Spanish Arms",
-            "filename": "DM C Jive Spanish Arms.mp4"
-          }
-        ]
-      },
-      {
-        "title": "11. Diamant C - Langsamer Walzer",
-        "videoData": [
+            "title": "DM C Jive Spanish Arms"
+          },
           {
             "id": "513516754",
-            "title": "DM C Langsamer Walzer Chair",
-            "filename": "DM C Langsamer Walzer Chair.mp4"
+            "title": "DM C Langsamer Walzer Chair"
+          },
+          {
+            "id": "864386744",
+            "title": "Video 4"
           }
         ]
       },
       {
-        "title": "11. Diamant C - Paso Doble",
+        "title": "10. Diamant - Block D",
         "videoData": [
           {
-            "id": "516333870",
-            "title": "DM C Paso Doble Grand Circle",
-            "filename": "DM C Paso Doble Grand Circle.mp4"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "courseName": "12. Diamant D",
-    "content": [
-      {
-        "title": "12. Diamant D - Quickstep",
-        "videoData": [
-          {
-            "id": "525065114",
-            "title": "DM D Quickstep Charleston",
-            "filename": "DM D Quickstep Charleston.mp4"
-          }
-        ]
-      },
-      {
-        "title": "12. Diamant D - Rumba",
-        "videoData": [
+            "id": "893300078",
+            "title": "Video 1"
+          },
           {
             "id": "519957434",
-            "title": "DM D Rumba Three Threes",
-            "filename": "DM D Rumba Three Threes.mp4"
-          }
-        ]
-      },
-      {
-        "title": "12. Diamant D - Samba",
-        "videoData": [
+            "title": "Video 2"
+          },
           {
             "id": "525095064",
-            "title": "DM D Samba Circular Voltas",
-            "filename": "DM D Samba Circular Voltas.mp4"
-          }
-        ]
-      },
-      {
-        "title": "12. Diamant D - Tango",
-        "videoData": [
+            "title": "DM D Samba Circular Voltas"
+          },
           {
-            "id": "523858671",
-            "title": "DM D Tango Left side Fwd Swivel",
-            "filename": "DM D Tango Left side Fwd Swivel.mp4"
+            "id": "864387471",
+            "title": "Video 4"
           }
         ]
       }
     ]
   },
   {
-    "courseName": "15. Slowfox",
+    "courseName": "11. Rising Stars Top Class",
     "content": [
       {
-        "title": "15. Slowfox - Slowfox Level I",
+        "title": "11. Rising Stars Top Class - Block A",
+        "videoData": [
+          {
+            "id": "864360889",
+            "title": "Jive B: Chugging"
+          },
+          {
+            "id": "864361974",
+            "title": "Jive B: Katapult"
+          },
+          {
+            "id": "864363149",
+            "title": "Paso Doble: Spins from CPP"
+          },
+          {
+            "id": "864363930",
+            "title": "Chachacha A: Sweetheart"
+          },
+          {
+            "id": "864361301",
+            "title": "Chachacha A: Continuous Circular Hiptwist"
+          },
+          {
+            "id": "902942271",
+            "title": "Langsamer Walzer A Gecheckte Kreiseldrehung"
+          },
+          {
+            "id": "902942635",
+            "title": "Langsamer Walzer B Double Reverse Spin"
+          }
+        ]
+      },
+      {
+        "title": "11. Rising Stars Top Class - Block B (aktueller Block)",
+        "videoData": [
+          {
+            "id": "875897261",
+            "title": "Video 1"
+          },
+          {
+            "id": "875900710",
+            "title": "Video 2"
+          },
+          {
+            "id": "875897515",
+            "title": "Video 3"
+          },
+          {
+            "id": "875898334",
+            "title": "Video 4"
+          },
+          {
+            "id": "875898849",
+            "title": "Video 5"
+          },
+          {
+            "id": "875899526",
+            "title": "Video 6"
+          },
+          {
+            "id": "875900217",
+            "title": "Video 7"
+          },
+          {
+            "id": "875900931",
+            "title": "Video 8"
+          }
+        ]
+      },
+      {
+        "title": "11. Rising Stars Top Class - Block C",
+        "videoData": [
+          {
+            "id": "902940171",
+            "title": "Video 1"
+          },
+          {
+            "id": "902940613",
+            "title": "Video 2"
+          },
+          {
+            "id": "902942271",
+            "title": "Langsamer Walzer A Gecheckte Kreiseldrehung"
+          },
+          {
+            "id": "902942635",
+            "title": "Langsamer Walzer B Double Reverse Spin"
+          },
+          {
+            "id": "902943032",
+            "title": "Video 5"
+          },
+          {
+            "id": "902943449",
+            "title": "Video 6"
+          },
+          {
+            "id": "902941248",
+            "title": "Video 7"
+          },
+          {
+            "id": "902941764",
+            "title": "Video 8"
+          }
+        ]
+      },
+      {
+        "title": "11. Rising Stars Top Class - Block D",
+        "videoData": [
+          {
+            "id": "918709632",
+            "title": "Video 1"
+          },
+          {
+            "id": "918709995",
+            "title": "Video 2"
+          },
+          {
+            "id": "918710336",
+            "title": "Video 3"
+          },
+          {
+            "id": "918710736",
+            "title": "Video 4"
+          },
+          {
+            "id": "918711026",
+            "title": "Video 5"
+          },
+          {
+            "id": "918711321",
+            "title": "Video 6"
+          },
+          {
+            "id": "918711556",
+            "title": "Video 7"
+          },
+          {
+            "id": "918711826",
+            "title": "Video 8"
+          }
+        ]
+      },
+      {
+        "title": "11. Rising Stars Top Class - Block E",
+        "videoData": [
+          {
+            "id": "940795682",
+            "title": "Video 1"
+          },
+          {
+            "id": "940796263",
+            "title": "Video 2"
+          },
+          {
+            "id": "940796708",
+            "title": "Video 3"
+          },
+          {
+            "id": "940797207",
+            "title": "Video 4"
+          },
+          {
+            "id": "940798067",
+            "title": "Video 5"
+          },
+          {
+            "id": "940798837",
+            "title": "Video 6"
+          },
+          {
+            "id": "940794381",
+            "title": "Video 7"
+          },
+          {
+            "id": "940794979",
+            "title": "Video 8"
+          }
+        ]
+      },
+      {
+        "title": "11. Rising Stars Top Class - Block F",
+        "videoData": [
+          {
+            "id": "1004063880",
+            "title": "Video 1"
+          },
+          {
+            "id": "1004061737",
+            "title": "Video 2"
+          },
+          {
+            "id": "1004060567",
+            "title": "Video 3"
+          },
+          {
+            "id": "1004065625",
+            "title": "Video 4"
+          }
+        ]
+      },
+      {
+        "title": "11. Rising Stars Top Class - Block G",
+        "videoData": [
+          {
+            "id": "1022082434",
+            "title": "Video 1"
+          },
+          {
+            "id": "1022084381",
+            "title": "Video 2"
+          },
+          {
+            "id": "1022085119",
+            "title": "Video 3"
+          },
+          {
+            "id": "1022083521",
+            "title": "Video 4"
+          }
+        ]
+      },
+      {
+        "title": "11. Rising Stars Top Class - Block H",
+        "videoData": [
+          {
+            "id": "1047491485",
+            "title": "Video 1"
+          },
+          {
+            "id": "1047492462",
+            "title": "Video 2"
+          },
+          {
+            "id": "1047494994",
+            "title": "Video 3"
+          },
+          {
+            "id": "1047496451",
+            "title": "Video 4"
+          }
+        ]
+      },
+      {
+        "title": "11. Rising Stars Top Class - Block I",
+        "videoData": [
+          {
+            "id": "1064294150",
+            "title": "RS Block I CC Side by Side"
+          },
+          {
+            "id": "1064295142",
+            "title": "RS Block I JV Mooch"
+          },
+          {
+            "id": "1064294687",
+            "title": "RS Block I LW Oversway"
+          },
+          {
+            "id": "1064295725",
+            "title": "RS Block I PD Left Foot Variation"
+          }
+        ]
+      },
+      {
+        "title": "11. Rising Stars Top Class - Block J",
+        "videoData": [
+          {
+            "id": "1087475831",
+            "title": "RS Block F TG Left Side Forward Swivel"
+          },
+          {
+            "id": "1087475759",
+            "title": "RS Block F SB Carioca"
+          },
+          {
+            "id": "1087475634",
+            "title": "RS Block F RB Kiki Walks"
+          },
+          {
+            "id": "1087475467",
+            "title": "RS Block F QS Turning Lock und Double Reverse Spin"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseName": "12. Slowfox",
+    "content": [
+      {
+        "title": "12. Slowfox - Slowfox Level I",
         "videoData": [
           {
             "id": "508499869",
-            "title": "SF I Abend 2 Curved Feather, Closed Impetus, Feather Finish",
-            "filename": "SF I Abend 2 Curved Feather, Closed Impetus, Feather Finish.mp4"
+            "title": "SF I Abend 2 Curved Feather, Closed Impetus, Feather Finish"
           },
           {
             "id": "508500684",
-            "title": "SF I Abend 1 Featherstep Threestep",
-            "filename": "SF I Abend 1 Featherstep Threestep.mp4"
+            "title": "SF I Abend 1 Featherstep Threestep"
           },
           {
             "id": "508499102",
-            "title": "SF I Abend 3 Reverse Turn",
-            "filename": "SF I Abend 3 Reverse Turn.mp4"
+            "title": "SF I Abend 3 Reverse Turn"
           }
         ]
       },
       {
-        "title": "15. Slowfox - Slowfox Level II",
+        "title": "12. Slowfox - Slowfox Level II",
         "videoData": [
           {
             "id": "508496931",
-            "title": "SF II Abend 1 Swivels, Feather Ending",
-            "filename": "SF II Abend 1 Swivels, Feather Ending.mp4"
+            "title": "SF II Abend 1 Swivels, Feather Ending"
           },
           {
             "id": "508498091",
-            "title": "SF II Abend 1 Open Impetus, Weave",
-            "filename": "SF II Abend 1 Open Impetus, Weave.mp4"
+            "title": "SF II Abend 1 Open Impetus, Weave"
           },
           {
             "id": "508505519",
-            "title": "SF II Abend 3 Passing Natural Turn, Outside Swivel, Feather ending",
-            "filename": "SF II Abend 3 Passing Natural Turn, Outside Swivel, Feather ending.mp4"
+            "title": "SF II Abend 3 Passing Natural Turn, Outside Swivel, Feather ending"
           }
         ]
       },
       {
-        "title": "15. Slowfox - Slowfox Level III",
+        "title": "12. Slowfox - Slowfox Level III",
         "videoData": [
           {
             "id": "511207155",
-            "title": "SF III Abend 1 Curved Threestep Throwaway",
-            "filename": "SF III Abend 1 Curved Threestep Throwaway.mp4"
+            "title": "SF III Abend 1 Curved Threestep Throwaway"
           },
           {
             "id": "511209101",
-            "title": "SF III Abend 3 Zic Zag, Reverse Swivels",
-            "filename": "SF III Abend 3 Zic Zag, Reverse Swivels.mp4"
+            "title": "SF III Abend 3 Zic Zag, Reverse Swivels"
           }
         ]
       },
       {
-        "title": "15. Slowfox - Slowfox Level IV",
+        "title": "12. Slowfox - Slowfox Level IV",
         "videoData": [
           {
             "id": "511210710",
-            "title": "SF IV Abend 1 Natural Turn Telemark",
-            "filename": "SF IV Abend 1 Natural Turn Telemark.mp4"
+            "title": "SF IV Abend 1 Natural Turn Telemark"
           },
           {
             "id": "511212193",
-            "title": "SF IV Abend 3 Natural Weave",
-            "filename": "SF IV Abend 3 Natural Weave.mp4"
+            "title": "SF IV Abend 3 Natural Weave"
           }
         ]
       }
     ]
   },
   {
-    "courseName": "16. Salsa & Bachata",
+    "courseName": "13. Salsa & Bachata",
     "content": [
       {
-        "title": "16. Salsa & Bachata - 1 Bachata Beginner",
+        "title": "13. Salsa & Bachata - 1 Bachata Beginner",
         "videoData": [
           {
             "id": "626376075",
-            "title": "[Not found]"
+            "title": "Video 1"
           },
           {
             "id": "626377202",
-            "title": "Bachata Camminando + Ladies Basic Turn"
+            "title": "Video 2"
           },
           {
             "id": "626378017",
-            "title": "Bachata Cuddle Turn"
+            "title": "Video 3"
           },
           {
             "id": "626382204",
-            "title": "Bachata Man's Basic Turn"
-          },
-          {
-            "id": "626382699",
-            "title": "Bachata Rebote"
+            "title": "Video 4"
           },
           {
             "id": "626379211",
-            "title": "Bachata Handshine"
+            "title": "Video 5"
           }
         ]
       },
       {
-        "title": "16. Salsa & Bachata - 1 Salsa Beginner",
+        "title": "13. Salsa & Bachata - 1 Salsa Beginner",
         "videoData": [
           {
-            "id": "507540229",
-            "title": "Salsa I Exhibela",
-            "filename": "Salsa I Exhibela.mp4"
+            "id": "1133520154",
+            "title": "Cuban 4"
           },
           {
-            "id": "507529120",
-            "title": "Salsa I Para Ti Para Mi",
-            "filename": "Salsa I Para Ti Para Mi.mp4"
+            "id": "1133518260",
+            "title": "70-71-72"
           },
           {
-            "id": "507526692",
-            "title": "Salsa I Por Abajo",
-            "filename": "Salsa I Por Abajo.mp4"
-          },
-          {
-            "id": "507548931",
-            "title": "Salsa I Dile que non",
-            "filename": "Salsa I Dile que non.mp4"
-          },
-          {
-            "id": "507534275",
-            "title": "Salsa I Dile que si",
-            "filename": "Salsa I Dile que si.mp4"
-          },
-          {
-            "id": "507517357",
-            "title": "Salsa I Guapea",
-            "filename": "Salsa I Guapea.mp4"
-          },
-          {
-            "id": "507519884",
-            "title": "Salsa I Sombrero",
-            "filename": "Salsa I Sombrero.mp4"
-          },
-          {
-            "id": "507521723",
-            "title": "Salsa I Enchufla",
-            "filename": "Salsa I Enchufla.mp4"
-          },
-          {
-            "id": "507547286",
-            "title": "Salsa I Enchufla Doble",
-            "filename": "Salsa I Enchufla Doble.mp4"
-          },
-          {
-            "id": "507518163",
-            "title": "Salsa I Setenta",
-            "filename": "Salsa I Setenta.mp4"
-          },
-          {
-            "id": "507521073",
-            "title": "Salsa I Setenta y un (71)",
-            "filename": "Salsa I Setenta y un (71).mp4"
-          },
-          {
-            "id": "507545159",
-            "title": "Salsa I Setenta y dos (72)",
-            "filename": "Salsa I Setenta y dos (72).mp4"
+            "id": "1133524606",
+            "title": "Sombrero"
           }
         ]
       },
       {
-        "title": "16. Salsa & Bachata - 2 Bachata Intermediate",
+        "title": "13. Salsa & Bachata - 2 Bachata Intermediate",
         "videoData": [
-          {
-            "id": "716443305",
-            "title": "Bachata Chest Roll.mp4"
-          },
-          {
-            "id": "716444532",
-            "title": "Bachata Head Roll.mp4"
-          },
           {
             "id": "626380973",
-            "title": "Bachata In and Out + 180 und Platzwechsel",
-            "filename": "Bachata In and Out + 180 und Platzwechsel.mp4"
+            "title": "Video 1"
           },
           {
             "id": "626383594",
-            "title": "Bachata Reverse Basic + Frisbee"
-          },
-          {
-            "id": "716441305",
-            "title": "Bachata Bodywave.mp4"
+            "title": "Video 2"
           },
           {
             "id": "803839750",
-            "title": "Bachata Neckturn.mp4"
-          },
-          {
-            "id": "803840548",
-            "title": "Bachata Sensual Basic"
+            "title": "Video 3"
           }
         ]
       },
       {
-        "title": "16. Salsa & Bachata - 2 Salsa Intermediate",
+        "title": "13. Salsa & Bachata - 2 Salsa Intermediate",
         "videoData": [
           {
-            "id": "507533865",
-            "title": "Salsa II Setenta y cinco (75)",
-            "filename": "Salsa II Setenta y cinco (75).mp4"
+            "id": "1133520447",
+            "title": "Cubanito"
           },
           {
-            "id": "508549155",
-            "title": "Salsa II Ochenta y ocho (88)",
-            "filename": "Salsa II Ochenta y ocho (88).mp4"
+            "id": "1133521402",
+            "title": "Ochenta y Ocho 88"
           },
           {
-            "id": "720274808",
-            "title": "Salsa II Setenta y Seis (76)"
-          },
-          {
-            "id": "798706992",
-            "title": "Salsa II Cubanita"
-          },
-          {
-            "id": "798707609",
-            "title": "Salsa II Cubanito"
-          },
-          {
-            "id": "798708137",
-            "title": "Salsa II Reverencia"
+            "id": "1133521832",
+            "title": "Reverencia"
           }
         ]
       },
       {
-        "title": "16. Salsa & Bachata - 3 Bachata Advanced",
-        "videoData": []
-      },
-      {
-        "title": "16. Salsa & Bachata - 3 Salsa Advanced",
+        "title": "13. Salsa & Bachata - 3 Bachata Advanced",
         "videoData": [
           {
-            "id": "508546127",
-            "title": "Salsa III Setenta y Tres (73)",
-            "filename": "Salsa III Setenta y Tres (73).mp4"
+            "id": "716441305",
+            "title": "Video 1"
           },
+          {
+            "id": "716443305",
+            "title": "Video 2"
+          },
+          {
+            "id": "716444532",
+            "title": "Video 3"
+          }
+        ]
+      },
+      {
+        "title": "13. Salsa & Bachata - 3 Salsa Advanced",
+        "videoData": [
           {
             "id": "508552557",
-            "title": "Salsa III Sombrero de Manos",
-            "filename": "Salsa III Sombrero de Manos.mp4"
+            "title": "Video 1"
           },
           {
             "id": "508547947",
-            "title": "Salsa III Setenta y cinco complicado",
-            "filename": "Salsa III Setenta y cinco complicado.mp4"
+            "title": "Video 2"
           },
           {
-            "id": "508550499",
-            "title": "Salsa III Noventa (90)",
-            "filename": "Salsa III Noventa (90).mp4"
+            "id": "508546127",
+            "title": "Video 3"
           },
           {
-            "id": "798708803",
-            "title": "Salsa III Coca Cola mit Drehung.mp4"
+            "id": "1133519102",
+            "title": "75"
           },
           {
-            "id": "798709225",
-            "title": "Salsa III Coca Cola ohne Drehung"
+            "id": "1133518823",
+            "title": "75 complicado"
           },
           {
-            "id": "798709970",
-            "title": "Salsa III Mambo"
+            "id": "1133518616",
+            "title": "73"
           },
           {
-            "id": "798709677",
-            "title": "Salsa III Mambo complicado"
+            "id": "1133524383",
+            "title": "Sombrero de Manos"
           }
         ]
       },
       {
-        "title": "16. Salsa & Bachata - Salsa Rueda",
+        "title": "13. Salsa & Bachata - 4 Bachata Professional",
         "videoData": [
           {
-            "id": "720272209",
-            "title": "Salsa Rueda Dame.mp4"
+            "id": "887294531",
+            "title": "Video 1"
           },
           {
-            "id": "720273494",
-            "title": "Salsa Rueda Flores.mp4"
+            "id": "887291486",
+            "title": "Video 2"
           },
           {
-            "id": "720268868",
-            "title": "Salsa Rueda High 5, High 10.mp4"
+            "id": "887293255",
+            "title": "Video 3"
+          }
+        ]
+      },
+      {
+        "title": "13. Salsa & Bachata - 4 Salsa Professional",
+        "videoData": [
+          {
+            "id": "798709225",
+            "title": "Video 1"
           },
           {
-            "id": "720265714",
-            "title": "Salsa Rueda Mosquito"
+            "id": "798708803",
+            "title": "Video 2"
           },
           {
-            "id": "720267564",
-            "title": "Salsa Rueda Short Bounce.mp4"
+            "id": "798709970",
+            "title": "Video 3"
           },
           {
-            "id": "720270661",
-            "title": "Salsa Rueda Telefona, Whats App.mp4"
+            "id": "798709677",
+            "title": "Video 4"
+          },
+          {
+            "id": "508550499",
+            "title": "Video 5"
+          },
+          {
+            "id": "1133519573",
+            "title": "90"
+          },
+          {
+            "id": "1133519769",
+            "title": "Coca Cola - Mambo - Mambo Complicado"
+          }
+        ]
+      },
+      {
+        "title": "13. Salsa & Bachata - Salsa Rueda",
+        "videoData": [
+          {
+            "id": "1133521977",
+            "title": "Rueda Calls 1"
+          },
+          {
+            "id": "1133522793",
+            "title": "Rueda Calls 2"
+          },
+          {
+            "id": "1133523560",
+            "title": "Rueda Enchuflas"
           }
         ]
       }
     ]
   },
   {
-    "courseName": "17. Gesamtprogramme",
+    "courseName": "14. Tango Argentino",
     "content": [
       {
-        "title": "17. Gesamtprogramme - Boogie",
+        "title": "14. Tango Argentino - Tango Argentino Advanced",
+        "videoData": [
+          {
+            "id": "867944355",
+            "title": "Video 1"
+          },
+          {
+            "id": "889945537",
+            "title": "Video 2"
+          },
+          {
+            "id": "889946430",
+            "title": "Video 3"
+          },
+          {
+            "id": "889947181",
+            "title": "Video 4"
+          },
+          {
+            "id": "889948021",
+            "title": "Video 5"
+          }
+        ]
+      },
+      {
+        "title": "14. Tango Argentino - Tango Argentino Beginner",
+        "videoData": [
+          {
+            "id": "867942287",
+            "title": "Video 1"
+          },
+          {
+            "id": "867942793",
+            "title": "Video 2"
+          },
+          {
+            "id": "867943443",
+            "title": "Video 3"
+          },
+          {
+            "id": "867945826",
+            "title": "Video 4"
+          },
+          {
+            "id": "867947439",
+            "title": "Video 5"
+          },
+          {
+            "id": "867948399",
+            "title": "Video 6"
+          }
+        ]
+      },
+      {
+        "title": "14. Tango Argentino - Tango Argentino Intermediate",
+        "videoData": [
+          {
+            "id": "867941300",
+            "title": "Video 1"
+          },
+          {
+            "id": "867945109",
+            "title": "Video 2"
+          },
+          {
+            "id": "867946564",
+            "title": "Video 3"
+          },
+          {
+            "id": "867949264",
+            "title": "Video 4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseName": "15. Discofox",
+    "content": [
+      {
+        "title": "15. Discofox - Discofox alle Videos",
+        "videoData": [
+          {
+            "id": "1105473483",
+            "title": "DF Bauchstreichler"
+          },
+          {
+            "id": "1105473731",
+            "title": "DF Brezel-Variation"
+          },
+          {
+            "id": "1105474083",
+            "title": "DF Butterfly"
+          },
+          {
+            "id": "1105474365",
+            "title": "DF Damentor, Herrentor"
+          },
+          {
+            "id": "1105474618",
+            "title": "DF Frisbee"
+          },
+          {
+            "id": "1105474812",
+            "title": "DF Grundschritt"
+          },
+          {
+            "id": "1105475067",
+            "title": "DF Herrentaucher"
+          },
+          {
+            "id": "1105475373",
+            "title": "DF Karusell, Damentaucher"
+          },
+          {
+            "id": "1105475714",
+            "title": "DF She Goes, He Goes"
+          },
+          {
+            "id": "1105475925",
+            "title": "DF Swing Out Swing In"
+          },
+          {
+            "id": "1105476131",
+            "title": "DF Wickler-Variation"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseName": "16. Gesamtprogramme",
+    "content": [
+      {
+        "title": "16. Gesamtprogramme - Boogie",
         "videoData": [
           {
             "id": "594108325",
-            "title": "Boogie, gesamtes Programm, Grundkurs bis Bronze.mp4",
-            "filename": "Boogie_gesamtes_Programm_Grundkurs_bis_Bronze.mp4.mp4"
+            "title": "Video 1"
           }
         ]
       },
       {
-        "title": "17. Gesamtprogramme - ChaChaCha",
+        "title": "16. Gesamtprogramme - ChaChaCha",
         "videoData": [
           {
             "id": "594115144",
-            "title": "ChaChaCha, gesamtes Programm, Grundkurs bis Goldstar.mp4",
-            "filename": "ChaChaCha_gesamtes_Programm_Grundkurs_bis_Goldstar.mp4.mp4"
+            "title": "Video 1"
           }
         ]
       },
       {
-        "title": "17. Gesamtprogramme - Jive",
+        "title": "16. Gesamtprogramme - Jive",
         "videoData": [
           {
             "id": "594110226",
-            "title": "Jive, gesamtes Programm, Silber bis Goldstar.mp4",
-            "filename": "Jive_gesamtes_Programm_Silber_bis_Goldstar.mp4.mp4"
+            "title": "Video 1"
           }
         ]
       },
       {
-        "title": "17. Gesamtprogramme - Kubanische Rumba",
+        "title": "16. Gesamtprogramme - Kubanische Rumba",
         "videoData": [
           {
             "id": "594111281",
-            "title": "Kubanische Rumba, gesamtes Programm, Silber bis Goldstar.mp4",
-            "filename": "Kubanische_Rumba_gesamtes_Programm_Silber_bis_Goldstar.mp4.mp4"
+            "title": "Video 1"
           }
         ]
       },
       {
-        "title": "17. Gesamtprogramme - Langsamer Walzer",
+        "title": "16. Gesamtprogramme - Langsamer Walzer",
         "videoData": [
           {
             "id": "594123515",
-            "title": "Langsamer Walzer, gesamtes Programm, Grundkurs bis Goldstar.mp4",
-            "filename": "Langsamer_Walzer_gesamtes_Programm_Grundkurs_bis_Goldstar.mp4.mp4"
+            "title": "Video 1"
           }
         ]
       },
       {
-        "title": "17. Gesamtprogramme - Paso Doble",
+        "title": "16. Gesamtprogramme - Paso Doble",
         "videoData": [
           {
             "id": "594118075",
-            "title": "Paso Doble, gesamtes Programm, Bronze bis Goldstar.mp4",
-            "filename": "Paso_Doble_gesamtes_Programm_Bronze_bis_Goldstar.mp4.mp4"
+            "title": "Video 1"
           }
         ]
       },
       {
-        "title": "17. Gesamtprogramme - Quickstep",
+        "title": "16. Gesamtprogramme - Quickstep",
         "videoData": [
           {
             "id": "595379463",
-            "title": "Quickstep, gesamtes Programm, Grundkurs bis Goldstar.mp4",
-            "filename": "Quickstep, gesamtes Programm, Grundkurs bis Goldstar.mp4.mp4"
+            "title": "Video 1"
           }
         ]
       },
       {
-        "title": "17. Gesamtprogramme - Samba",
+        "title": "16. Gesamtprogramme - Samba",
         "videoData": [
           {
             "id": "594117016",
-            "title": "Samba, gesamtes Programm, Grundkurs bis Goldstar.mp4",
-            "filename": "Samba_gesamtes_Programm_Grundkurs_bis_Goldstar.mp4.mp4"
+            "title": "Video 1"
           }
         ]
       },
       {
-        "title": "17. Gesamtprogramme - Square Rumba",
+        "title": "16. Gesamtprogramme - Square Rumba",
         "videoData": [
           {
             "id": "594113582",
-            "title": "Square Rumba, gesamtes Programm, Grundkurs bis Bronze.mp4",
-            "filename": "Square_Rumba_gesamtes_Programm_Grundkurs_bis_Bronze.mp4.mp4"
+            "title": "Video 1"
           }
         ]
       },
       {
-        "title": "17. Gesamtprogramme - Tango",
+        "title": "16. Gesamtprogramme - Tango",
         "videoData": [
           {
             "id": "594122711",
-            "title": "Tango, gesamtes Programm, Grundkurs bis Goldstar.mp4",
-            "filename": "Tango_gesamtes_Programm_Grundkurs_bis_Goldstar.mp4.mp4"
+            "title": "Video 1"
           }
         ]
       },
       {
-        "title": "17. Gesamtprogramme - Wiener Walzer",
+        "title": "16. Gesamtprogramme - Wiener Walzer",
         "videoData": [
           {
             "id": "594121480",
-            "title": "Wiener Walzer, gesamtes Programm, Grundkurs bis Goldstar.mp4",
-            "filename": "Wiener_Walzer_gesamtes_Programm_Grundkurs_bis_Goldstar.mp4.mp4"
+            "title": "Video 1"
           }
         ]
       }
